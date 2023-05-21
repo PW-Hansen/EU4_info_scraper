@@ -2,35 +2,34 @@ import os
 import numpy as np
 import re
 import csv
+from datetime import datetime
+
 # from PIL import Image
 # import imageio
 
 #%% TO-DO
-# Country values, such as culture and religion.
-# Grab ruler stats
 # Tag colors
 # Technology groups?
 # Country flags
-# Trade goods, also change the province write function to reflect this
 # Tribal lands?
 
 #%% Paths
 ORIGIN_PATH = os.getcwd()
 
 
-# MODE = 'anbennar'
-# MAIN_PATH = r'C:\Users\idria\Documents\Paradox Interactive\Europa Universalis IV\mod\Anbennar-PublicFork'
-# PROVINCE_FLAG_FILE = 'anbennar_flags.eu4'
-# CULTURE_FILE = "anb_cultures.txt" 
-# RELIGION_FILE = '00_anb_religion.txt'
-# COUNTRY_TAG_FILE = 'anb_countries.txt'
+MODE = 'anbennar'
+MAIN_PATH = r'C:\Users\idria\Documents\Paradox Interactive\Europa Universalis IV\mod\Anbennar-PublicFork'
+PROVINCE_FLAG_FILE = 'anbennar_flags.eu4'
+CULTURE_FILE = "anb_cultures.txt" 
+RELIGION_FILE = '00_anb_religion.txt'
+COUNTRY_TAG_FILE = 'anb_countries.txt'
 
-MODE = 'vanilla'
-MAIN_PATH = r'D:\Steam\steamapps\common\Europa Universalis IV'
-PROVINCE_FLAG_FILE = 'vanilla_flags.eu4'
-CULTURE_FILE = '00_cultures.txt'
-RELIGION_FILE = '00_religion.txt'
-COUNTRY_TAG_FILE = '00_countries.txt'
+# MODE = 'vanilla'
+# MAIN_PATH = r'D:\Steam\steamapps\common\Europa Universalis IV'
+# PROVINCE_FLAG_FILE = 'vanilla_flags.eu4'
+# CULTURE_FILE = '00_cultures.txt'
+# RELIGION_FILE = '00_religion.txt'
+# COUNTRY_TAG_FILE = '00_countries.txt'
 
 #%% Constants
 SEA_COLOR = (58, 202, 252)
@@ -79,6 +78,7 @@ class Province():
         self.cores      = []
         self.pixels     = []
         self.ingame     = False
+        self.trade_good = 'unknown'
         self.climate    = ''
         self.winter     = ''
         self.monsoon    = ''
@@ -101,7 +101,11 @@ class Province():
         try:
             self.development = self.base_manpower + self.base_production + self.base_manpower
         except:
-            print('Tried to calculate development of a province without development.')
+            print(f'{self} has no development values. Assigning N/A to dev values.')
+            self.development        = 'N/A'
+            self.base_tax           = 'N/A'
+            self.base_production    = 'N/A'
+            self.base_manpower      = 'N/A'
             
     def get_info(self):
         info_list = [None]*23
@@ -132,7 +136,7 @@ class Province():
             if key in prov_dict:
                 info_list[pos] = prov_dict[key]
             else:
-                info_list[pos] = ''
+                info_list[pos] = 'N/A'
         
         # Name
         info_list[0] = self.prov_name.split('_#')[0]
@@ -146,7 +150,7 @@ class Province():
             elif self.religion.group == owner.religion.group:
                 info_list[11] = 'Same religious group'
             else:
-                info_list[11] = 'Different culture group'
+                info_list[11] = 'Different religious group'
 
             if self.culture == owner.culture:
                 info_list[13] = 'Same culture'
@@ -357,6 +361,52 @@ class Climate(Behavior):
             else:
                 province.climate = self
 
+# People.
+class Person:
+    def __init__(self, name, dynasty, adm, dip, mil, birth_date, female):
+        self.__class__.instances.append(self)
+        self.name = name.replace('"','')
+        self.dynasty = dynasty.replace('"','')
+        self.adm = int(adm)
+        self.dip = int(dip)
+        self.mil = int(mil)
+        self.stats_sum = self.adm + self.dip + self.mil
+        self.birth_date = birth_date
+        self.female = female
+        self.personality = []
+        
+        if self.birth_date != 'N/A':
+            while len(self.birth_date.split('.')[0]) < 4:
+                self.birth_date = '0' + self.birth_date
+            self.calc_age()
+        
+        else:
+            self.age = 'N/A'
+    
+    def calc_age(self):
+        dob = datetime.strptime(self.birth_date, "%Y.%m.%d")
+        start = datetime.strptime('1444.11.11', "%Y.%m.%d")
+        
+        delta = start - dob
+        
+        age = int(delta.days / 365)
+        
+        self.age = age
+    
+    def __repr__(self):
+        return self.name
+
+# Monarchs.
+class Monarch(Person):
+    instances = []
+
+# Heirs.
+class Heir(Person):
+    instances = []
+
+# Consorts.
+class Consort(Person):
+    instances = []
 
 #%% Load countries.
 def load_countries():
@@ -382,25 +432,6 @@ def load_countries():
     common_path = os.path.join(MAIN_PATH, 'common')
     os.chdir(common_path)
     
-    common_path_countries = os.path.join(common_path, 'countries')
-    os.chdir(common_path_countries)
-    
-    # country_colors_dict = {}
-    
-    # for file in os.listdir():
-    #     with open(file, 'r', encoding = 'ANSI') as f:
-    #         lines = f.readlines(100)
-            
-    #         country_name = file.split('.')[0]
-            
-    #         for line in lines:
-    #             if 'color =' in line:
-    #                 line.split('{')[1].split('}')[0]
-    #                 rgb_vals = [int(val) for val in line.split('{')[1].split('}')[0].split(' ') if val != '']
-    #                 color = (rgb_vals[0], rgb_vals[1], rgb_vals[2])
-            
-    #         country_colors_dict[country_name] = color
-
     common_path_country_tags = os.path.join(common_path, 'country_tags')
     os.chdir(common_path_country_tags)
     
@@ -429,7 +460,7 @@ def load_countries():
     for country_file in os.listdir():
         country_tag = country_file[:3]
         country_info = read_PDX_file(os.getcwd(), country_file)
-        
+                
         if 'religion' and 'primary_culture' in country_info and country_tag not in exclude_tags:
             religion_string = country_info['religion'].split('#')[0]
             culture_string = country_info['primary_culture'].split('#')[0]
@@ -450,10 +481,110 @@ def load_countries():
                 country_culture.countries.append(country)
             else:
                 country.culture = 'not found'
-            
         
-        
+        # Checking for monarchs, heirs, and consorts. Should be a subfunction,
+        # but ah well.
+        # print(country_tag)
+        if country_tag not in exclude_tags:
+            for key in country_info:
+                if type(country_info[key]) == dict:
+                    for subkey in country_info[key]:
+                        if 'monarch' == subkey and type(country_info[key][subkey]) == dict:
+                            info = country_info[key][subkey]
+                            
+                            try:
+                                female = info['female']
+                            except:
+                                female = 'no'
+                            
+                            try:
+                                regent = info['regent']
+                            except:
+                                regent = 'no'
+                                
+                            try:
+                                name = info['name']
+                            except:
+                                name= 'N/A'
     
+                            try:
+                                dynasty = info['dynasty']
+                            except:
+                                dynasty = 'N/A'
+    
+                            try:
+                                birthdate = info['birth_date']
+                            except:
+                                birthdate= 'N/A'
+    
+                                
+                            monarch = Monarch(name, dynasty,
+                                              info['adm'], info['dip'], info['mil'],
+                                              birthdate, female)
+                            monarch.regency = regent
+                            
+                            country.ruler = monarch
+                            monarch.country = country
+                            
+                        if 'heir' == subkey and type(country_info[key][subkey]) == dict:
+                            info = country_info[key][subkey]
+                            
+                            try:
+                                female = info['female']
+                            except:
+                                female = 'no'
+                            
+                            heir = Heir(info['name'], info['dynasty'],
+                                        info['adm'], info['dip'], info['mil'],
+                                        info['birth_date'], female)
+                            
+                            country.heir = heir
+                            heir.country = country
+    
+                        if 'queen' == subkey and type(country_info[key][subkey]) == dict:
+                            info = country_info[key][subkey]
+                            
+                            try:
+                                female = info['female']
+                            except:
+                                female = 'no'
+                                
+                            try:
+                                origin = info['country_of_origin']
+                            except:
+                                origin = 'N/A'
+                            
+                            consort = Consort(info['name'], info['dynasty'],
+                                              info['adm'], info['dip'], info['mil'],
+                                              info['birth_date'], female)
+                            consort.origin = origin
+                            
+                            country.consort = consort
+                            consort.country = country
+                            
+            # Personalities. Must be handled seperately, as country_info is a dict
+            # so rulers having different personalities would be overwritten.
+            with open(country_file, 'r', encoding = 'ansi') as f:
+                lines = f.readlines()
+                
+                for line in lines:
+                    if 'add_ruler_personality' in line:
+                        personality = line.split('=')[1].replace(' ','').replace('\n','')
+                        
+                        if personality not in monarch.personality:
+                            monarch.personality.append(personality)
+    
+                    if 'add_heir_personality' in line:
+                        personality = line.split('=')[1].replace(' ','').replace('\n','')
+                        
+                        if personality not in heir.personality:
+                            heir.personality.append(personality)
+    
+                    if 'add_queen_personality' in line:
+                        personality = line.split('=')[1].replace(' ','').replace('\n','')
+                        
+                        if personality not in consort.personality:
+                            consort.personality.append(personality)
 
 #%% Cultures.
 def load_cultures():
@@ -471,55 +602,6 @@ def load_cultures():
             if sub_element not in not_cultures:
                 Culture(sub_element, CultureGroup.class_dict[culture_group])
 
-    
-def load_cultures_old():
-    common_path     = os.path.join(MAIN_PATH  ,'common')
-    cultures_path   = os.path.join(common_path,'cultures')
-        
-    # Cultures
-    os.chdir(cultures_path)
-    
-    # Dict of culture groups and the cultures within them.
-    culture_groups_dict = {}
-    
-    with open(CULTURE_FILE, 'r', encoding = 'ANSI') as f:
-        lines = f.readlines()
-        trimmed_lines = [line for line in lines if '\t\t' not in line[:2] and line != '\n' and line != '\t\n']
-        
-        culture_group   = ''
-        cultures        = []
-        
-        for i,line in enumerate(trimmed_lines):
-            if line[0] == '#': # Ignoring comments.
-                pass
-            elif line[0] != '\t' and '= {' in line:
-                culture_group = line.split('=')[0].replace('\t','')
-            elif '= {' in line and '_names' not in line: # Catches potential cultures.
-                if '\t}\n' in trimmed_lines[i+1]: # Next line of cultures will always be a }.
-                    potential_culture = line.replace('\t','\t ').split(' ')[1]
-                    if '\t' not in potential_culture:
-                        cultures.append(potential_culture)
-                elif '}' in line:
-                    potential_culture = line.replace('\t','\t ').split(' ')[1]
-                    if '\t' not in potential_culture:
-                        cultures.append(potential_culture)
-                    
-            elif line[0] != '\t' and '}' in line:
-                culture_groups_dict[culture_group] = cultures
-                cultures = []
-    
-    culture_groups_dict.pop('') # Removing empty element
-    
-    culture_groups  = []
-    cultures        = []
-    
-    for group in culture_groups_dict:
-        culture_group = CultureGroup(group)
-        culture_groups.append(culture_group)
-        for sub_culture in culture_groups_dict[group]:
-            culture = Culture(sub_culture,culture_group)
-            cultures.append(culture)
-
 #%% Religions
 def load_religions():
     common_path     = os.path.join(MAIN_PATH  ,'common')
@@ -534,48 +616,9 @@ def load_religions():
             if type(religion_info[religion_group][sub_element]) == dict:
                 Religion(sub_element, ReligionGroup.class_dict[religion_group])
 
-
-def load_religions_old():
-    common_path     = os.path.join(MAIN_PATH  ,'common')
-    religions_path  = os.path.join(common_path,'religions')
-    os.chdir(religions_path)
-            
-    # Dict of religious groups and the religions within them.
-    religion_groups_dict = {}
-    
-    with open(RELIGION_FILE, 'r', encoding = 'utf-8') as f:
-        lines = f.readlines()
-        trimmed_lines = [line for line in lines if '\t\t' not in line and line != '\n']
-        
-        religious_group = ''
-        religions = []
-        
-        for i,line in enumerate(trimmed_lines):
-            if line[0] == '#': # Ignoring comments.
-                pass
-            elif line[0] != '\t' and '= {' in line:
-                religious_group = line.split(' ')[0]
-            elif '= {' in line: # Catches potential religions.
-                if '\t}\n' in trimmed_lines[i+1]: # Next line of religions will always be a }.
-                    potential_religion = line.replace('\t','\t ').split(' ')[1]
-                    if '\t' not in potential_religion:
-                        religions.append(potential_religion)
-            elif line[0] != '\t' and '}' in line:
-                religion_groups_dict[religious_group] = religions
-                religions = []
-    
-    # Anbennar apparently has animism, will be added manually.
-    religion_groups_dict['pagan'] = ['animism']
-    
-    religion_groups  = []
-    religions        = []
-    
-    for group in religion_groups_dict:
-        religion_group = ReligionGroup(group)
-        religion_groups.append(religion_group)
-        for religion_branch in religion_groups_dict[group]:
-            religion = Religion(religion_branch,religion_group)
-            religions.append(religion)
+    if MODE == 'anbennar': # Because apparently, Anbennar uses animism.
+        Pagan = ReligionGroup('pagan')
+        Religion('animism', Pagan)
             
 #%% Getting areas, regions, continents, etc.
 def prep_areas_etc():
@@ -604,7 +647,7 @@ def prep_areas_etc():
                 if '#Land Areas' in line:
                     province_list = land_provinces
             
-            if line[0] != '#':
+            if line[0] != '#' and 'color' not in line:
                 split_line = line.replace('\t','').replace('\n','').split(' ')
                 for fragment in split_line:
                     if fragment not in ['','#']:
@@ -629,8 +672,6 @@ def load_provinces(land_provinces, sea_provinces):
         lines = f.readlines()
         province_definitions = {}
     
-        provinces = [None] * len(lines)
-    
         for line in lines[1:]:
             line_fragments = line.split(';')
             prov_num = int(line_fragments[0])
@@ -641,10 +682,7 @@ def load_provinces(land_provinces, sea_provinces):
             color = (r, g, b)
             province_definitions[color] = prov_num
             
-            province = Province(prov_num, prov_name, color)
-            province.color = color
-            
-            provinces[prov_num] = province
+            Province(prov_num, prov_name, color)
             
     os.chdir(provinces_path)
     
@@ -652,11 +690,13 @@ def load_provinces(land_provinces, sea_provinces):
     cultures_dict = Culture.class_dict
     religions_dict = Religion.class_dict
     
+    provinces_dict = Province.class_dict
+    
     for file_name in os.listdir():
         if file_name[0] != '~': # Duplicates, shouldn't be treated.     
             prov_num = int(file_name.split('-')[0].split('.')[0].split(' ')[0].replace(' ',''))
             
-            province = provinces[prov_num]
+            province = provinces_dict[prov_num]
             with open(file_name, 'r', encoding = 'latin-1') as f:
                 lines = f.readlines()
                 
@@ -702,7 +742,7 @@ def load_provinces(land_provinces, sea_provinces):
                                 province.EoA = True
                         elif 'center_of_trade' in key:
                             province.CoT = int(value)
-                        elif 'trade_good' in key: # Make trade goods a class too?
+                        elif 'trade_good' in key and 'latent' not in key: # Make trade goods a class too?
                             province.trade_good = value
                         elif 'is_city' in key and value == 'yes':
                             province.is_city = True
@@ -713,19 +753,18 @@ def load_provinces(land_provinces, sea_provinces):
                         elif 'base_manpower' in key:
                             province.base_manpower = int(value)
         
-            provinces[prov_num] = province
             province.ingame = True
     
     # Setting land/sea/wasteland definition of provinces.
     for prov in land_provinces:
-        if type(provinces[prov]) != type(None):
-            provinces[prov].type = 'land'
+        if type(provinces_dict[prov]) != type(None):
+            provinces_dict[prov].type = 'land'
     
     for prov in sea_provinces:
-        if type(provinces[prov]) != type(None):
-            provinces[prov].type = 'sea'
+        if type(provinces_dict[prov]) != type(None):
+            provinces_dict[prov].type = 'sea'
     
-    for province in provinces:
+    for province in Province.instances:
         if type(province) != type(None):
             if not hasattr(province, 'type'):
                 province.type = 'wasteland'
@@ -738,7 +777,12 @@ def assign_areas_etc():
     area_info = read_PDX_file(map_path, 'area.txt')
     
     for name in area_info:
-        if len(area_info[name]) != 0:
+        area_list = area_info[name]
+        for val in area_list:
+            if val == '' or val == '\n':
+                area_list.remove(val)
+        
+        if len(area_list) != 0:
             if 'color' in area_info[name][0]:
                 province_string = area_info[name][1]
             else:
@@ -756,7 +800,7 @@ def assign_areas_etc():
                 areas = []
                 for area_string in areas_string:
                     area_string = area_string.replace('\n','').replace('\t','').replace(' ','').split('#')[0]
-                    if 'area' in area_string and area_string in Area.class_dict:
+                    if area_string in Area.class_dict:
                         area = Area.class_dict[area_string]
                     
                     areas.append(area)
@@ -967,8 +1011,57 @@ def save_info_as_csv(csv_name):
     with open(csv_name + '.csv', 'w', newline = '') as f:
         writer = csv.writer(f)
         writer.writerows(provinces_info)
+
+def export_rulers_etc(csv_name):
+    header = ['Total mana' , 'TAG', 'Tag name', 'ADM/DIP/MIL', 'Age', 'Personalities', 'Name', 'Dynasty']
+    
+    ruler_data = [header]
+    for monarch in Monarch.instances:
+        if len(monarch.country.provinces) > 0:        
+            statline = f'{monarch.adm}/{monarch.dip}/{monarch.mil}'
             
+            ruler_info = [monarch.stats_sum, monarch.country.tag, 
+                          monarch.country.name, statline, monarch.age,
+                          monarch.personality, monarch.name, monarch.dynasty]
+            
+            ruler_data.append(ruler_info)
+
+    with open(csv_name + '_rulers.csv', 'w', newline = '') as f:
+        writer = csv.writer(f)
+        writer.writerows(ruler_data)
         
+    heir_data = [header]
+    for heir in Heir.instances:
+        if len(heir.country.provinces) > 0:        
+            statline = f'{heir.adm}/{heir.dip}/{heir.mil}'
+            
+            heir_info = [heir.stats_sum, heir.country.tag,
+                         heir.country.name, statline, heir.age,
+                         heir.personality, heir.name, heir.dynasty]
+            
+            heir_data.append(heir_info)
+
+    with open(csv_name + '_heirs.csv', 'w', newline = '') as f:
+        writer = csv.writer(f)
+        writer.writerows(heir_data)
+        
+    header.append('Country of origin')
+    consort_data = [header]
+    for consort in Consort.instances:
+        if len(heir.country.provinces) > 0:        
+            statline = f'{consort.adm}/{consort.dip}/{consort.mil}'
+            
+            consort_info = [consort.stats_sum, consort.country.tag, 
+                            consort.country.name, statline, consort.age,
+                            consort.personality, consort.name, consort.dynasty,
+                            consort.origin]
+            
+            consort_data.append(consort_info)
+
+    with open(csv_name + '_consorts.csv', 'w', newline = '') as f:
+        writer = csv.writer(f)
+        writer.writerows(consort_data)
+
 
 #%% PDX file reader and other general helper functions
 def get_province_numbers(string):
@@ -1009,12 +1102,6 @@ def read_PDX_file_subfunction(lines):
             key,value = line.replace(' ','').replace('\t','').replace('\n','').split('=', 1)
             components[key] = value
             
-    # for line in lines:
-    #     if '=' in line and '{' in line and '}' in line:
-    #         key, value = line.split('=', 1)
-    #         key.replace(' ','')
-    #         components[key] = value
-            
     
     if len(components) == 0:
         components = lines         
@@ -1026,8 +1113,14 @@ def read_PDX_file(path, filename):
     
     with open(filename, 'r', encoding = 'ansi') as f:
         lines = f.readlines()
+        
+    new_lines = []
     
-    return read_PDX_file_subfunction(lines)
+    for line in lines:
+        new_line = line.replace('    ','\t')
+        new_lines.append(new_line)
+    
+    return read_PDX_file_subfunction(new_lines)
 
 
 #%% Actually running stuff.
@@ -1041,34 +1134,40 @@ assign_trade_nodes()
 load_and_assign_terrain()
 load_and_assign_climate()
 
+
+if MODE == 'anbennar':
+    save_info_as_csv('output_anbennar')
+elif MODE == 'vanilla':
+    save_info_as_csv('output_vanilla')
+    
 #%% Loading map.
-if False:
-    os.chdir(map_path)
+# if False:
+#     os.chdir(map_path)
     
-    im = Image.open('provinces.bmp')
-    province_map = im.load()
+#     im = Image.open('provinces.bmp')
+#     province_map = im.load()
     
-    x,y = im.size
+#     x,y = im.size
     
-    province_map_indexed = np.zeros((x,y))
-    province_map_provinces = np.zeros((x,y), dtype = Province)
-    for i in range(x):
-        for j in range(y):
-            pixel_color = province_map[i,j]
-            index = int(province_definitions[pixel_color])
-            province_map_indexed[i,j] = index
-            province_map_provinces[i,j] = provinces[index]
-            provinces[index].pixels.append([i,j])
+#     province_map_indexed = np.zeros((x,y))
+#     province_map_provinces = np.zeros((x,y), dtype = Province)
+#     for i in range(x):
+#         for j in range(y):
+#             pixel_color = province_map[i,j]
+#             index = int(province_definitions[pixel_color])
+#             province_map_indexed[i,j] = index
+#             province_map_provinces[i,j] = provinces[index]
+#             provinces[index].pixels.append([i,j])
         
         
 #%%
-if False:
-    os.chdir(origin_path)
+# if False:
+#     os.chdir(origin_path)
     
-    xmax,ymax=im.size
+#     xmax,ymax=im.size
     
-    for x in range(xmax):
-        for y in range(ymax):
-            province_map[x,y] = province_map_provinces[x,y].get_owner_color()
+#     for x in range(xmax):
+#         for y in range(ymax):
+#             province_map[x,y] = province_map_provinces[x,y].get_owner_color()
     
-    imageio.imwrite('testing.png', im)
+#     imageio.imwrite('testing.png', im)
