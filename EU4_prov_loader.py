@@ -2,39 +2,54 @@ import os
 import numpy as np
 import re
 import csv
+import re
 from datetime import datetime
+import matplotlib.pyplot as plt
 
 # from PIL import Image
 # import imageio
 
 #%% TO-DO
-# Tag colors
+# Colors for cultures and religions.
 # Technology groups?
 # Country flags
 # Tribal lands?
+# Rivers mapping.
+# Adjacencies from straits and the like.
 
 #%% Paths
-ORIGIN_PATH = os.getcwd()
 
+DEFINES = {}
 
-MODE = 'anbennar'
-MAIN_PATH = r'C:\Users\idria\Documents\Paradox Interactive\Europa Universalis IV\mod\Anbennar-PublicFork'
-PROVINCE_FLAG_FILE = 'anbennar_flags.eu4'
-CULTURE_FILE = "anb_cultures.txt" 
-RELIGION_FILE = '00_anb_religion.txt'
-COUNTRY_TAG_FILE = 'anb_countries.txt'
+DEFINES['ORIGIN_PATH'] = os.getcwd()
 
-# MODE = 'vanilla'
-# MAIN_PATH = r'D:\Steam\steamapps\common\Europa Universalis IV'
-# PROVINCE_FLAG_FILE = 'vanilla_flags.eu4'
-# CULTURE_FILE = '00_cultures.txt'
-# RELIGION_FILE = '00_religion.txt'
-# COUNTRY_TAG_FILE = '00_countries.txt'
+DEFINES['MODE'] = 'anbennar'
+# DEFINES['MODE'] = 'vanilla'
+
+if DEFINES['MODE'] == 'anbennar':
+    DEFINES['MAIN_PATH'] = r'C:\Users\idria\Documents\Paradox Interactive\Europa Universalis IV\mod\Anbennar-PublicFork'
+    DEFINES['PROVINCE_FLAG_FILE'] = 'anbennar_flags.eu4'
+    DEFINES['CULTURE_FILE'] = "anb_cultures.txt" 
+    DEFINES['RELIGION_FILE'] = '00_anb_religion.txt'
+    DEFINES['COUNTRY_TAG_FILE'] = 'anb_countries.txt'
+
+if DEFINES['MODE'] == 'vanilla':
+    DEFINES['MAIN_PATH'] = r'D:\Steam\steamapps\common\Europa Universalis IV'
+    DEFINES['PROVINCE_FLAG_FILE'] = 'vanilla_flags.eu4'
+    DEFINES['CULTURE_FILE'] = '00_cultures.txt'
+    DEFINES['RELIGION_FILE'] = '00_religion.txt'
+    DEFINES['COUNTRY_TAG_FILE'] = '00_countries.txt'
+    
+# Change to true to get province statistics csv file.
+DEFINES['OUTPUT'] = False
+DEFINES['MAP_PROVINCES'] = True
 
 #%% Constants
-SEA_COLOR = (58, 202, 252)
-WASTELAND_COLOR = (64, 64, 64)
-UNCOLONIZED_COLOR = (128, 128, 128)
+COLOR_DEFINES = {}
+
+COLOR_DEFINES['SEA_COLOR'] = (58, 202, 252)
+COLOR_DEFINES['WASTELAND_COLOR'] = (64, 64, 64)
+COLOR_DEFINES['UNCOLONIZED_COLOR'] = (128, 128, 128)
 
 
 #%%
@@ -64,38 +79,46 @@ class Behavior:
 class Province():
     instances = []
     class_dict = {}
+    color_dict = {}
+    
+    NEIGHBOR_OFFSETS = [(-1, 0), (1, 0), (0, -1), (0, 1), (-1, -1), (-1, 1), (1, -1), (1, 1)]
+
     
     def __init__(self, prov_num, prov_name, color):
         self.__class__.instances.append(self)
         self.__class__.class_dict[int(prov_num)] = self
-        self.prov_num   = prov_num
-        self.prov_name  = prov_name 
-        self.color      = color
-        self.owner      = 'None'
-        self.is_city    = False
-        self.EoA        = False
-        self.has_port   = False
-        self.cores      = []
-        self.pixels     = []
-        self.ingame     = False
-        self.trade_good = 'unknown'
-        self.climate    = ''
-        self.winter     = ''
-        self.monsoon    = ''
+        self.__class__.color_dict[color] = self
+        self.prov_num       = prov_num
+        self.prov_name      = prov_name 
+        self.color          = color
+        self.owner          = 'None'
+        self.is_city        = False
+        self.EoA            = False
+        self.has_port       = False
+        self.cores          = []
+        self.pixels         = []
+        self.ingame         = False
+        self.trade_good     = 'unknown'
+        self.climate        = ''
+        self.winter         = ''
+        self.monsoon        = ''
+        self.neighbors_all  = []
+        self.neighbors_land = []
+        self.neighbors_sea  = []
     
     def __repr__(self):
         return f'{self.prov_num} - {self.prov_name}' 
     
     def get_owner_color(self):
         if self.type == 'land':
-            if hasattr(self, 'owner'):
+            if self.owner != 'None':
                 return self.owner.color
             else:
-                return UNCOLONIZED_COLOR
+                return COLOR_DEFINES['UNCOLONIZED_COLOR']
         elif self.type == 'sea':
-            return SEA_COLOR
+            return COLOR_DEFINES['SEA_COLOR']
         elif self.type == 'wasteland':
-            return WASTELAND_COLOR
+            return COLOR_DEFINES['WASTELAND_COLOR']
     
     def calc_development(self):
         try:
@@ -137,7 +160,7 @@ class Province():
                 info_list[pos] = prov_dict[key]
             else:
                 info_list[pos] = 'N/A'
-        
+                
         # Name
         info_list[0] = self.prov_name.split('_#')[0]
         
@@ -165,7 +188,58 @@ class Province():
         
         return info_list
     
+    def change_ownership(self, new_owner):
+        try:
+            self.owner.provinces.remove(self)
+        except:
+            pass
+        try:
+            self.owner = Country.tag_dict[new_owner]
+            self.owner.provinces.append(self)
+        except:
+            pass
+        
+    # Getting border pixels.
+    def get_neighbors(self, province_map):        
+        # Set to store the border pixels
+        border_pixels = set()
+    
+        # Convert the pixel_list to a set for faster lookups
+        pixel_set = set(self.pixels)
+    
+        # Loop through each pixel belonging to the province.
+        for pixel in self.pixels:
+            x, y = pixel
+    
+            # Check each neighbor offset
+            for offset_x, offset_y in self.__class__.NEIGHBOR_OFFSETS:
+                neighbor_pixel = (x + offset_x, y + offset_y)
+    
+                # If the neighbor is not in the provided pixels list, it's a border pixel
+                if neighbor_pixel not in pixel_set:
+                    # Making sure that the neighboring pixel isn't above or below the map.
+                    if neighbor_pixel[1] == -1 or neighbor_pixel[1] == 2048:
+                        pass
                     
+                    # If the neighboring pixel is left or right of the map, it should warp.
+                    elif neighbor_pixel[0] == -1:
+                        neighbor_pixel = (5632 - 1, y + offset_y)
+                    elif neighbor_pixel[0] == 5632:
+                        neighbor_pixel = (0, y + offset_y)
+                    else:
+                        border_pixels.add(neighbor_pixel)
+                    
+        border_owners = list({province_map[pixel] for pixel in border_pixels})
+
+        for border_owner in border_owners:
+            if border_owner.type == 'land':
+                self.neighbors_all.append(border_owner)
+                self.neighbors_land.append(border_owner)
+            elif border_owner.type == 'sea':
+                self.neighbors_all.append(border_owner)
+                self.neighbors_sea.append(border_owner)
+
+
 class Country(Behavior):
     instances = []
     class_dict = {}
@@ -178,6 +252,7 @@ class Country(Behavior):
         self.tag        = tag
         self.name       = name
         self.provinces  = []
+        self.color      = ''
         
     def __repr__(self):
         return f'{self.tag} - {self.name}'
@@ -410,26 +485,26 @@ class Consort(Person):
 
 #%% Load countries.
 def load_countries():
-    history_path    = os.path.join(MAIN_PATH, 'history')
+    history_path    = os.path.join(DEFINES['MAIN_PATH'], 'history')
     countries_path  = os.path.join(history_path, 'countries')
     
     os.chdir(countries_path)
     
     country_files = os.listdir()
-    countries = []
     
-    if MODE == 'anbennar':
+    if DEFINES['MODE'] == 'anbennar':
         exclude_tags = ['NAT', 'NPC', 'PAP', 'PIR', 'REB']  # Vanille remnants. Ignore. 
-    elif MODE == 'vanilla':
+    elif DEFINES['MODE'] == 'vanilla':
         exclude_tags = []
     
     for country_file in country_files:
-        if country_file[:3] not in exclude_tags:        
-            country = Country(country_file[:3],country_file[6:-4])    
-            countries.append(country)
+        if country_file[:3] not in exclude_tags: 
+            tag = country_file[:3]
+            name = country_file[6:-4]
+            country = Country(tag,name)    
             
-    # Grabbing country colors.
-    common_path = os.path.join(MAIN_PATH, 'common')
+    # Grabbing country names.
+    common_path = os.path.join(DEFINES['MAIN_PATH'], 'common')
     os.chdir(common_path)
     
     common_path_country_tags = os.path.join(common_path, 'country_tags')
@@ -437,7 +512,7 @@ def load_countries():
     
     tag_country_file_dict = {}
     
-    with open(COUNTRY_TAG_FILE, 'r', encoding = 'UTF-8') as f:
+    with open(DEFINES['COUNTRY_TAG_FILE'], 'r', encoding = 'ANSI') as f:
         lines = f.readlines()
         
         for line in lines:
@@ -449,17 +524,36 @@ def load_countries():
                 country_name = line_split[1].split('/')[1].split('.')[0]
                 tag_country_file_dict[tag] = country_name        
             
-    for country in countries:
+    for country in Country.instances:
         country.name = tag_country_file_dict[country.tag]
-        # country.color = country_colors_dict[country.name]
+        Country.class_dict[country.name] = country
         
+    # Country colors.    
+    common_path_countries = os.path.join(common_path, 'countries')
+    os.chdir(common_path_countries)
+    
+    for country in Country.instances:
+        country_file = f'{tag_country_file_dict[country.tag]}.txt'
+        
+        with open(country_file, 'r', encoding = 'ANSI') as f:
+            lines = f.readlines()
+            for line in lines:
+                if line[:7] == 'color =':
+                    color_string = line.split('{')[1].split('}')[0].split(' ')
+                    r, g, b = [int(x) for x in color_string if x]
+                    
+                    country.color = (r, g, b)
+                    
+                    continue
+                    
+    # Religion and culture.
     os.chdir(countries_path)
     
     country_dict = Country.tag_dict
     
     for country_file in os.listdir():
         country_tag = country_file[:3]
-        country_info = read_PDX_file(os.getcwd(), country_file)
+        country_info = read_PDX_file(os.getcwd(), country_file, encoding = 'ANSI')
                 
         if 'religion' and 'primary_culture' in country_info and country_tag not in exclude_tags:
             religion_string = country_info['religion'].split('#')[0]
@@ -481,6 +575,12 @@ def load_countries():
                 country_culture.countries.append(country)
             else:
                 country.culture = 'not found'
+        
+        # Grabbing capital.
+        if 'capital' in country_info and country_tag not in exclude_tags:
+            capital = country_info['capital'].split('#')[0].replace(' ','')
+            country.capital = int(capital)
+            
         
         # Checking for monarchs, heirs, and consorts. Should be a subfunction,
         # but ah well.
@@ -588,10 +688,10 @@ def load_countries():
 
 #%% Cultures.
 def load_cultures():
-    common_path     = os.path.join(MAIN_PATH  ,'common')
-    cultures_path   = os.path.join(common_path,'cultures')
+    common_path     = os.path.join(DEFINES['MAIN_PATH'], 'common')
+    cultures_path   = os.path.join(common_path, 'cultures')
     
-    culture_info = read_PDX_file(cultures_path, CULTURE_FILE)
+    culture_info = read_PDX_file(cultures_path, DEFINES['CULTURE_FILE'], encoding = 'ANSI')
     
     not_cultures = ['graphical_culture', 'dynasty_names', 'male_names', 'female_names']
     
@@ -604,10 +704,10 @@ def load_cultures():
 
 #%% Religions
 def load_religions():
-    common_path     = os.path.join(MAIN_PATH  ,'common')
-    religions_path  = os.path.join(common_path,'religions')
+    common_path     = os.path.join(DEFINES['MAIN_PATH'], 'common')
+    religions_path  = os.path.join(common_path, 'religions')
     
-    religion_info = read_PDX_file(religions_path, RELIGION_FILE)
+    religion_info = read_PDX_file(religions_path, DEFINES['RELIGION_FILE'])
     
     for religion_group in religion_info:
         ReligionGroup(religion_group)
@@ -616,14 +716,14 @@ def load_religions():
             if type(religion_info[religion_group][sub_element]) == dict:
                 Religion(sub_element, ReligionGroup.class_dict[religion_group])
 
-    if MODE == 'anbennar': # Because apparently, Anbennar uses animism.
+    if DEFINES['MODE'] == 'anbennar': # Because apparently, Anbennar uses animism.
         Pagan = ReligionGroup('pagan')
         Religion('animism', Pagan)
             
 #%% Getting areas, regions, continents, etc.
 def prep_areas_etc():
     # Go to maps folder.
-    map_path = os.path.join(MAIN_PATH,'map')
+    map_path = os.path.join(DEFINES['MAIN_PATH'], 'map')
     
     os.chdir(map_path)
     
@@ -640,10 +740,10 @@ def prep_areas_etc():
                 break
     
             # Switches sea to False once a specific line has been reached.
-            if MODE == 'anbennar':
+            if DEFINES['MODE'] == 'anbennar':
                 if 'Gerudia' in line:
                     province_list = land_provinces
-            elif MODE == 'vanilla':
+            elif DEFINES['MODE'] == 'vanilla':
                 if '#Land Areas' in line:
                     province_list = land_provinces
             
@@ -659,9 +759,9 @@ def prep_areas_etc():
 
 #%% Provinces
 def load_provinces(land_provinces, sea_provinces):
-    history_path    = os.path.join(MAIN_PATH   ,'history')
-    provinces_path  = os.path.join(history_path,'provinces')
-    map_path = os.path.join(MAIN_PATH,'map')
+    history_path    = os.path.join(DEFINES['MAIN_PATH'], 'history')
+    provinces_path  = os.path.join(history_path, 'provinces')
+    map_path = os.path.join(DEFINES['MAIN_PATH'], 'map')
     
     os.chdir(map_path)
     
@@ -718,7 +818,7 @@ def load_provinces(land_provinces, sea_provinces):
                             value = line_split[1].replace(' ','')
                             value = value.replace('\t','').replace('{','').replace('}','')
                         
-                        if 'owner' in key:
+                        if 'owner' in key and 'tribal_owner' not in key:
                             province.owner = country_dict[value]
                             country_dict[value].provinces.append(province)
                         elif 'controller' in key:
@@ -768,11 +868,12 @@ def load_provinces(land_provinces, sea_provinces):
         if type(province) != type(None):
             if not hasattr(province, 'type'):
                 province.type = 'wasteland'
-                
+        
+        province.owner_original = province.owner
                 
 #%% Areas, regions, and superregions.
 def assign_areas_etc():
-    map_path = os.path.join(MAIN_PATH,'map')
+    map_path = os.path.join(DEFINES['MAIN_PATH'], 'map')
     
     area_info = read_PDX_file(map_path, 'area.txt')
     
@@ -837,7 +938,7 @@ def assign_areas_etc():
 #%% Trade node
 def assign_trade_nodes():
     # Getting correct directionary.
-    common_path = os.path.join(MAIN_PATH, 'common')
+    common_path = os.path.join(DEFINES['MAIN_PATH'], 'common')
     os.chdir(common_path)
     
     common_path_tradenodes = os.path.join(common_path, 'tradenodes')
@@ -890,7 +991,7 @@ def assign_trade_nodes():
             
 #%% Setting up terrain and assigning it to provinces.
 def load_and_assign_terrain():
-    terrain_file_dict = read_PDX_file(os.path.join(MAIN_PATH, 'map'), 'terrain.txt')
+    terrain_file_dict = read_PDX_file(os.path.join(DEFINES['MAIN_PATH'], 'map'), 'terrain.txt')
 
     terrain_types = terrain_file_dict['categories']
     k, v = [], []
@@ -907,9 +1008,9 @@ def load_and_assign_terrain():
             terrain_province_dict[key] = ''
     
     
-    os.chdir(ORIGIN_PATH)
+    os.chdir(DEFINES['ORIGIN_PATH'])
     
-    with open(PROVINCE_FLAG_FILE, 'r', encoding = 'ANSI') as f:
+    with open(DEFINES['PROVINCE_FLAG_FILE'], 'r', encoding = 'ANSI') as f:
         lines = f.readlines()
         
         for i,line in enumerate(lines):
@@ -950,7 +1051,7 @@ def load_and_assign_terrain():
 
 #%% Climate
 def load_and_assign_climate():
-    climate_file_dict = read_PDX_file(os.path.join(MAIN_PATH, 'map'), 'climate.txt')
+    climate_file_dict = read_PDX_file(os.path.join(DEFINES['MAIN_PATH'], 'map'), 'climate.txt')
 
     k, v = [], []
         
@@ -988,6 +1089,13 @@ def load_and_assign_climate():
     Climate('no_monsoon', no_monsoon_provinces)
     
 
+#%% Misc. cleanup.
+def misc_cleanup():
+    for country in Country.instances:
+        if hasattr(country, 'capital'):
+            if type(country.capital) == int:
+                country.capital = Province.class_dict[country.capital]
+
 #%% Information extraction.
 def save_info_as_csv(csv_name):
     header  = ['Province name','Province number', 'Development', 
@@ -1006,14 +1114,14 @@ def save_info_as_csv(csv_name):
         if province.ingame and province.type == 'land':
             provinces_info.append(province.get_info())
             
-    os.chdir(ORIGIN_PATH)        
+    os.chdir(DEFINES['ORIGIN_PATH'])        
     
     with open(csv_name + '.csv', 'w', newline = '') as f:
         writer = csv.writer(f)
         writer.writerows(provinces_info)
 
 def export_rulers_etc(csv_name):
-    header = ['Total mana' , 'TAG', 'Tag name', 'ADM/DIP/MIL', 'Age', 'Personalities', 'Name', 'Dynasty']
+    header = ['Total mana' , 'TAG', 'Tag name', 'ADM/DIP/MIL', 'Age', 'Personalities', 'Name', 'Dynasty', 'Gender', 'Country region', 'Country superregion']
     
     ruler_data = [header]
     for monarch in Monarch.instances:
@@ -1023,6 +1131,16 @@ def export_rulers_etc(csv_name):
             ruler_info = [monarch.stats_sum, monarch.country.tag, 
                           monarch.country.name, statline, monarch.age,
                           monarch.personality, monarch.name, monarch.dynasty]
+            
+            country_capital = Province.class_dict[monarch.country.capital]
+            
+            ruler_info.append(country_capital.region)
+            ruler_info.append(country_capital.superregion)
+            
+            if monarch.female == 'yes':
+                ruler_info.append('Female')
+            else:
+                ruler_info.append('Male')
             
             ruler_data.append(ruler_info)
 
@@ -1039,6 +1157,16 @@ def export_rulers_etc(csv_name):
                          heir.country.name, statline, heir.age,
                          heir.personality, heir.name, heir.dynasty]
             
+            country_capital = Province.class_dict[heir.country.capital]
+            
+            heir_info.append(country_capital.region)
+            heir_info.append(country_capital.superregion)
+
+            if heir.female == 'yes':
+                heir_info.append('Female')
+            else:
+                heir_info.append('Male')
+
             heir_data.append(heir_info)
 
     with open(csv_name + '_heirs.csv', 'w', newline = '') as f:
@@ -1048,14 +1176,25 @@ def export_rulers_etc(csv_name):
     header.append('Country of origin')
     consort_data = [header]
     for consort in Consort.instances:
-        if len(heir.country.provinces) > 0:        
+        if len(consort.country.provinces) > 0:        
             statline = f'{consort.adm}/{consort.dip}/{consort.mil}'
             
             consort_info = [consort.stats_sum, consort.country.tag, 
                             consort.country.name, statline, consort.age,
-                            consort.personality, consort.name, consort.dynasty,
-                            consort.origin]
+                            consort.personality, consort.name, consort.dynasty]
             
+            country_capital = Province.class_dict[consort.country.capital]
+            
+            consort_info.append(country_capital.region)
+            consort_info.append(country_capital.superregion)
+
+            if consort.female == 'yes':
+                consort_info.append('Female')
+            else:
+                consort_info.append('Male')
+                
+            consort_info.append(consort.origin)
+
             consort_data.append(consort_info)
 
     with open(csv_name + '_consorts.csv', 'w', newline = '') as f:
@@ -1074,7 +1213,8 @@ def get_province_numbers(string):
 
     return provinces
     
-
+# Is a bit wonky with dictionaries, can overwrite stuff if working with, i.e.
+# save files where there are multiple entries for the same date. Future fix?
 def read_PDX_file_subfunction(lines):
     ranges_start = []
     ranges_end   = []
@@ -1108,10 +1248,10 @@ def read_PDX_file_subfunction(lines):
         
     return components
 
-def read_PDX_file(path, filename):
+def read_PDX_file(path, filename, encoding = 'UTF-8'):
     os.chdir(path)
     
-    with open(filename, 'r', encoding = 'ansi') as f:
+    with open(filename, 'r', encoding = encoding) as f:
         lines = f.readlines()
         
     new_lines = []
@@ -1122,6 +1262,309 @@ def read_PDX_file(path, filename):
     
     return read_PDX_file_subfunction(new_lines)
 
+#%% Savegame stuff.
+# Thorfindel request.
+# Entire file needs to be run first to get continent stuff to work properly.
+from scipy.optimize import curve_fit
+
+def check_for_owner_changes(filename, encoding = 'ANSI'):
+    print(filename)
+    search_line = '\t\t\t\towner='
+    
+    
+    superregions = {}
+    
+    year = re.sub("[^0-9]", "", filename)
+    year = year[:4]
+    
+    for superregion in Superregion.class_dict:
+        superregions[superregion] = []
+    
+    with open(filename, 'r', encoding = encoding) as f:
+        lines = f.readlines()
+                
+        prov_num = 0
+        
+        for i, line in enumerate(lines):
+            if line[0] == '-' and line[-3:] == '={\n':
+                prov_num = int(line[1:-3])
+            
+            if search_line in line:
+                above_line = lines[i-1]
+                if '1444' not in above_line:
+                    owner_change_year = above_line.split('.')[0].strip('\t')
+                    try:
+                        superregion = str(Province.class_dict[prov_num].superregion)
+                        superregions[superregion].append(owner_change_year)
+                    except:
+                        print(i, prov_num)
+    
+    active_regions = ''
+    sum_owner_changes = 0
+
+    for superregion in superregions:
+        if superregion != []:
+            active_regions += superregion.replace('_superregion','') + ' '
+            sum_owner_changes += len(superregions[superregion])            
+    
+    average_yearly_changes = sum_owner_changes / (int(year) - 1444)
+    
+    print('')
+    
+    return year, sum_owner_changes, average_yearly_changes, active_regions
+
+def get_prov_changes_in_save(filename, encoding = 'ANSI'):
+    print(filename)
+    search_line = '\t\t\t\towner='
+        
+    prov_changes = [[datetime.strptime('1000.1.1', "%Y.%m.%d"), 0, '---']]
+    
+    with open(filename, 'r', encoding = encoding) as f:
+        lines = f.readlines()
+                
+        prov_num = 0
+        
+        for i, line in enumerate(lines):
+            if line[0] == '-' and line[-3:] == '={\n':
+                prov_num = int(line[1:-3])
+            
+            if search_line in line:
+                date = lines[i-1].split('=')[0].replace('\t','')
+                if int(date.split('.')[0]) > 1443:
+                    if date != '1444.11.12':
+                        datetime_obj = datetime.strptime(date, "%Y.%m.%d")
+                        owner_new = line[-5:-2]
+                        
+                        ownership_change = [datetime_obj, Province.class_dict[prov_num], owner_new]
+                        prov_changes = np.vstack((prov_changes, ownership_change))
+    
+    prov_changes = prov_changes[1:]
+    
+    return prov_changes[prov_changes[:, 0].argsort()]
+
+def count_living_tags():
+    living_tags = 0
+    for country in Country.instances:
+        if country.provinces != []:
+            living_tags += 1
+        
+    return living_tags
+
+def get_yearly_living_tags(filename, count_1444_11_12 = False, path = r'C:\Users\idria\Documents\Programming\EU4\saves\saves_to_check'):
+    os.chdir(path)
+    current_year = 1444
+    
+    years = [1444]
+    
+    prov_changes = get_prov_changes_in_save(filename)
+    
+    prov_changes_history = []
+    
+    cumulative_prov_changes = 0
+    
+    living_tags_history = []
+    
+    for prov_change in prov_changes:
+        province = prov_change[1]
+        new_owner_tag = prov_change[2]
+        cumulative_prov_changes += 1
+
+        if prov_change[0].year != current_year or count_1444_11_12:
+            current_year = prov_change[0].year
+            years.append(current_year)
+            living_tags_history.append(count_living_tags())
+            prov_changes_history.append(cumulative_prov_changes)
+            
+        province.change_ownership(new_owner_tag)
+    
+    return years[:-1], living_tags_history, prov_changes_history
+
+def run_Thorfindel_request_2():
+    # Amount of living tags per year.
+    path = r'C:\Users\idria\Documents\Programming\EU4\saves\saves_to_check'
+    os.chdir(path)
+    files = os.listdir()
+    
+    years_storage = []
+    living_tags_storage = []
+    cumulative_prov_changes_storage = []
+    
+    f, ax = plt.subplots(1)
+    plt.grid()
+    plt.title('Living tags per year', fontsize = 48)
+    plt.ylabel('Tags alive', fontsize = 40)
+    plt.xlabel('Year', fontsize = 40)
+    for file in files:
+        years, living_tags_history, cumulative_prov_changes = get_yearly_living_tags(file)
+        ax.plot(years[-1], living_tags_history[-1],'k.', markersize = 12)
+        ax.plot(years, living_tags_history,'-.')
+        
+        years_storage.append(years)
+        living_tags_storage.append(living_tags_history)
+        cumulative_prov_changes_storage.append(cumulative_prov_changes)
+        
+        for country in Country.instances:
+            country.provinces = []
+        
+        for province in Province.instances:
+            province.owner = province.owner_original
+            if province.owner != 'None':
+                province.owner.provinces.append(province)
+    
+    return years_storage, living_tags_storage, cumulative_prov_changes_storage
+
+def prov_changes_analysis(years_storage, cumulative_prov_changes_storage, subtract_1444 = True, max_1444_changes = 100):
+    f, ax = plt.subplots(1)
+    plt.grid()
+    plt.title('Cumulative prov changes per year', fontsize = 48)
+    plt.ylabel('Total prov changes', fontsize = 40)
+    plt.xlabel('Years since start', fontsize = 40)
+    for years, cumulative_prov_changes in zip(years_storage, cumulative_prov_changes_storage):
+        if cumulative_prov_changes[0] < max_1444_changes:
+            if subtract_1444:
+                cumulative_prov_changes = [x - cumulative_prov_changes[0] for x in cumulative_prov_changes]
+                
+            years = [year - 1444 for year in years]
+                
+            ax.plot(years[-1], cumulative_prov_changes[-1],'k.', markersize = 12)
+            ax.plot(years, cumulative_prov_changes, '-')
+
+def living_tag_analysis(years_storage, living_tags_storage, cutoff = 500):
+    
+    years_analysis = []
+    living_tags_analysis = []
+
+    for years, living_tags in zip(years_storage, living_tags_storage):
+        if living_tags[0] > 700:
+            years_analysis.append(years)
+            living_tags_analysis.append(living_tags)
+
+    x = np.concatenate(years_analysis, axis = 0)
+    y = np.concatenate(living_tags_analysis, axis = 0)
+    
+    xp = np.linspace(1444, 1822, 1822-1444, endpoint = False)
+                
+    # Exponential function.
+    x -= 1444
+    xp -= 1444
+    
+    y = y[x <= cutoff]
+    x = x[x <= cutoff]
+    xp = xp[xp <= cutoff]
+
+    p0 = [350, -0.0059937829994006295, 350]    
+    
+    popt, pcov = curve_fit(lambda t, a, b, c: a * np.exp(b * t) + c, x, y, maxfev=5000, p0 = p0)
+    
+    a = popt[0]
+    b = popt[1]
+    c = popt[2]
+    
+    y_fitted = a * np.exp(b * xp) + c
+    
+    ax = plt.axes()
+    ax.scatter(x, y, label='Raw data')
+    ax.plot(xp, y_fitted, 'k', label='Fitted curve')
+    ax.set_title(r'Tags alive per year, modelled as exponential decay', fontsize = 48)
+    ax.plot(xp, [c]*len(xp), 'k--', label = 'Offset')
+    ax.set_ylabel('Total tags alive', fontsize = 40)
+    ax.set_xlabel('Years since start', fontsize = 40)
+    ax.legend(fontsize = 32)
+    
+    return popt
+
+
+
+def run_Thorfindel_request():
+    path = r'C:\Users\idria\Documents\Programming\EU4\saves\saves_to_check'
+    os.chdir(path)
+    
+    files = os.listdir()
+    
+    years = []
+    changes = []
+    yearly_changes = []
+    active_regions = []
+    
+    for file in files:
+        year, change, yearly_change, active_region = check_for_owner_changes(file)
+        years.append(year)
+        changes.append(change)
+        yearly_changes.append(yearly_change)
+        active_regions.append(active_region)
+        
+    return years, changes, yearly_changes, active_regions
+    
+#%% Unzipping compressed saves, renaming gamestate.
+from zipfile import ZipFile
+import os
+
+# zip_path = r'C:\Users\idria\Documents\Programming\EU4\saves\zip_files'
+
+def unzip_saves(zip_path):
+    os.chdir(zip_path)
+    
+    files = os.listdir()
+    for file in files:
+        print(file)
+        with ZipFile(file) as zObject:
+            zObject.extractall()
+            
+        with open(r'meta', 'r', encoding = 'ANSI') as f:
+            mp = ''
+            date = ''
+            country_name = ''
+            lines = f.readlines()
+            for line in lines:
+                if 'date=' in line:
+                    date = line.split('=')[1].replace('.','_').strip('\n')
+                if 'multi_player=yes' in line:
+                    mp = 'mp_'
+                if 'displayed_country_name' in line:
+                    country_name = line.split('=')[1].strip('\n').strip('"').replace(' ','_')
+                
+        save_name = mp + country_name + date
+        
+        if save_name != '':
+            os.rename('gamestate', save_name)
+        else:
+            os.remove('gamestate')
+        
+        os.remove('meta')
+        os.remove('ai')
+        os.remove(file)
+
+#%% Loading map.
+from PIL import Image
+
+def create_province_map():
+    map_path = os.path.join(DEFINES['MAIN_PATH'],'map')
+    
+    os.chdir(map_path)
+    
+    im = Image.open('provinces.bmp')
+    province_map_raw = im.load()
+    
+    x, y = im.size
+    province_dict = Province.color_dict
+    province_map = np.zeros((x,y), dtype = Province)
+    
+    for i in range(x):
+        for j in range(y):
+            pixel_color = province_map_raw[i,j]
+            province = province_dict[pixel_color]
+            province_map[i,j] = province
+            province.pixels.append((i,j))        
+            
+    return province_map, im
+
+#%% Getting neighbors for land and sea provinces.
+def get_neighbors(province_map):
+    DEFINES['MAP_X'], DEFINES['MAP_Y'] = province_map.shape
+    
+    for province in Province.instances:
+        if province.type != 'wasteland':
+            province.get_neighbors(province_map)            
 
 #%% Actually running stuff.
 load_cultures()
@@ -1133,41 +1576,32 @@ assign_areas_etc()
 assign_trade_nodes()
 load_and_assign_terrain()
 load_and_assign_climate()
+misc_cleanup()
 
+if DEFINES['MAP_PROVINCES']:
+    province_map, image = create_province_map()
+    get_neighbors(province_map)
 
-if MODE == 'anbennar':
-    save_info_as_csv('output_anbennar')
-elif MODE == 'vanilla':
-    save_info_as_csv('output_vanilla')
+if DEFINES['OUTPUT'] == True:
+    if DEFINES['MODE'] == 'anbennar':
+        save_info_as_csv('output_anbennar')
+    elif DEFINES['MODE'] == 'vanilla':
+        save_info_as_csv('output_vanilla')
     
-#%% Loading map.
-# if False:
-#     os.chdir(map_path)
+#%% Map output.
+# Outputting a map. Takes a map of all provinces and inputs the proper colors
+# for a political map, i.e. owner's color for owned provinces, blue for sea,
+# and grey for unowned.
+def country_map(im):
+    os.chdir(DEFINES['ORIGIN_PATH'])
     
-#     im = Image.open('provinces.bmp')
-#     province_map = im.load()
+    xmax, ymax = im.size
     
-#     x,y = im.size
+    output_im = Image.new('RGB', (xmax, ymax))
+            
+    for x in range(xmax):
+        for y in range(ymax):
+            rgb = province_map[x,y].get_owner_color()
+            output_im.putpixel((x, y), rgb)
     
-#     province_map_indexed = np.zeros((x,y))
-#     province_map_provinces = np.zeros((x,y), dtype = Province)
-#     for i in range(x):
-#         for j in range(y):
-#             pixel_color = province_map[i,j]
-#             index = int(province_definitions[pixel_color])
-#             province_map_indexed[i,j] = index
-#             province_map_provinces[i,j] = provinces[index]
-#             provinces[index].pixels.append([i,j])
-        
-        
-#%%
-# if False:
-#     os.chdir(origin_path)
-    
-#     xmax,ymax=im.size
-    
-#     for x in range(xmax):
-#         for y in range(ymax):
-#             province_map[x,y] = province_map_provinces[x,y].get_owner_color()
-    
-#     imageio.imwrite('testing.png', im)
+    output_im.save('testing.png')
