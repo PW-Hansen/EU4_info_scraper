@@ -1,0 +1,66 @@
+Total mana,TAG,Tag name,ADM/DIP/MIL,Age,Personalities,Name,Dynasty,Gender,Country region,Country superregion,Country of origin
+10,A01,Lorent,5/3/2,31,['fertile_personality'],Laurenne,sílKyliande,lencenor_region,western_cannor_superregion,Female,A01
+9,A04,Wesdam,4/4/1,44,[],ReánnaII,sílMadelaire,west_dameshead_region,western_cannor_superregion,Female,A14
+5,A09,Sorncost,2/2/1,64,['loose_lips_personality'],Reánna,Siloriel,lencenor_region,western_cannor_superregion,Female,A01
+7,A24,Westmoors,5/2/0,54,[],Mary,Fouler,alenic_frontier_region,western_cannor_superregion,Female,A24
+4,A30,Wex,1/2/1,31,['fertile_personality'],Eilísa,Siloriel,the_borders_region,western_cannor_superregion,Female,A01
+8,A45,Istralore,3/3/2,24,[],Ricain,Silistra,east_dameshead_region,western_cannor_superregion,Male,A45
+5,A46,Arbaran,3/1/1,39,[],Alina,sílnaTrísfer,alenic_frontier_region,western_cannor_superregion,Female,A11
+2,A49,Hill Gnolls,1/1/0,14,['fertile_personality'],Toixk,King-of-the-Hill,businor_region,western_cannor_superregion,Male,A49
+9,A56,Celliande,3/2/4,35,[],Marianne,sílnaTrísfer,the_borders_region,western_cannor_superregion,Male,A57
+9,B55,Counts League,3/5/1,45,['charismatic_negotiator_personality'],Larrien,Sevaros,inner_castanor_region,escann_superregion,Female,N/A
+9,F30,Kumarkand,2/5/2,35,[],Aruhana,szel-Kalib,bulwar_proper_region,bulwar_superregion,Female,F44
+8,F35,Azkabar,2/5/1,30,['zealot_personality'],Leja,szel-Sarumar,bulwar_proper_region,bulwar_superregion,Female,F39
+11,F36,Harklum,6/3/2,20,[],Yamina,szel-Azanerdu,bulwar_proper_region,bulwar_superregion,Female,F44
+10,F40,Anzabad,4/4/2,42,[],Ishtara,szel-Kumarkand,bulwar_proper_region,bulwar_superregion,Female,F30
+6,F42,Varamhar,1/3/2,209,['immortal_personality'],Alarel,Aralzuir,bulwar_proper_region,bulwar_superregion,Female,F42
+6,F43,Zansap,2/4/0,34,['charismatic_negotiator_personality'],Nahrina,szel-Arfajazan,bulwar_proper_region,bulwar_superregion,Female,F43
+10,F56,Dasmatus,3/4/3,40,[],Kamelya,szelSadul,far_salahad_region,bulwar_superregion,Female,N/A
+9,F62,Duwarkani,1/2/6,66,[],Safana,Duwaran,tijarikhet_region,west_sarhal_superregion,Female,N/A
+10,F72,Haraagtseda,2/5/3,21,"['intricate_web_weaver_personality', 'free_thinker_personality', 'mage_personality']",Izaba,Seer-of-Fates,gazraak_region,south_salahad_superregion,Female,N/A
+9,H03,Dearktir,4/2/3,30,[],Alaria,Seastrider,sarmadfar_region,eordand_superregion,Female,H03
+6,H04,Elchos,2/1/3,25,[],Ivrandel,Lightkeeper,glorelthir_region,eordand_superregion,Female,H09
+7,H06,Sidpar,2/4/1,30,[],Mihtriel,Oathsworn,sarmadfar_region,eordand_superregion,Female,H08
+8,H08,Pelomar,2/3/3,25,['embezzler_personality'],Leslindel,Swiftsword,sarmadfar_region,eordand_superregion,Female,H06
+7,H09,Iadth,1/3/3,25,[],Elriandor,Goldtree,glorelthir_region,eordand_superregion,Male,H04
+9,H11,Sglard,1/3/5,42,[],Adral,Lightkeeper,glorelthir_region,eordand_superregion,Male,H09
+8,H12,Raithtall,4/1/3,27,[],Erlass,Whitehand,glorelthir_region,eordand_superregion,Female,H18
+7,H13,Jhorgashirr,2/2/3,23,[],Allara,Elmtree,randrunnse_region,eordand_superregion,Female,H13
+7,H15,Slegcal,1/3/3,40,[],Lanhara,Beechleaf,randrunnse_region,eordand_superregion,Female,H15
+9,H17,Reotcrab,2/3/4,30,[],Weharran,Oldstone,randrunnse_region,eordand_superregion,Female,H15
+8,H18,Gelcolle,2/2/4,36,[],Lanhara,Oakgardner,randrunnse_region,eordand_superregion,Female,H18
+9,H19,Strutmar,2/4/3,27,[],Lanhara,Forestgate,randrunnse_region,eordand_superregion,Female,H19
+9,H20,Trimgarb,2/4/3,27,[],Talar,Forestgate,randrunnse_region,eordand_superregion,Male,H19
+10,H77,Ovdal Lodhum,3/5/2,54,[],Dwalra,Garnetpick,serpentreach_region,west_serpentspine_superregion,Female,H77
+13,I26,Salla Elyn,4/6/3,188,['immortal_personality'],Urariel,Myna,west_deepwoods_region,deepwoods_superregion,Female,I27
+9,I29,Salla Cenag,6/1/2,85,"['immortal_personality', 'incorruptible_personality', 'lawgiver_personality']",Lanhara,Ayeth,west_deepwoods_region,deepwoods_superregion,Female,I33
+13,I30,Salla Fealgarn,4/6/3,107,"['immortal_personality', 'incorruptible_personality', 'lawgiver_personality']",Olfyra,Scotha,east_deepwoods_region,deepwoods_superregion,Female,I31
+6,I36,Spiked Log,1/2/3,24,[],Zoorda,Verminhusk,east_deepwoods_region,deepwoods_superregion,Female,I37
+18,I37,Verminhusk,6/6/6,71,"['immortal_personality', 'mage_personality', 'cruel_personality']",Selsusa,Ghúl,east_deepwoods_region,deepwoods_superregion,Female,I34
+7,I38,Beasteater,3/3/1,29,[],Dugda,Silvertusk,west_deepwoods_region,deepwoods_superregion,Female,I44
+6,I40,Cursed Howl,2/1/3,39,[],Urda,Silentblade,east_deepwoods_region,deepwoods_superregion,Female,I43
+13,I41,Sapchopper,5/5/3,20,[],Bor,Silvertusk,west_deepwoods_region,deepwoods_superregion,Female,I44
+7,I44,Silvertusk,2/3/2,32,[],Ghorza,Sapchopper,east_deepwoods_region,deepwoods_superregion,Female,I41
+13,J32,Mire Maw,3/5/5,37,[],Floria,Faraway,serpents_vale_region,west_serpentspine_superregion,Female,N/A
+8,J36,Kvakolba,3/4/1,36,[],Mujagh,Gravelhide,ogre_mountains_region,forbidden_lands_superregion,Female,I90
+12,J38,Remlygenjrot,2/6/4,26,[],Tiraga,Strongrock,ogre_mountains_region,forbidden_lands_superregion,Female,J35
+9,J39,Achtejardon,2/2/5,46,[],Agha,Spinebreaker,ogre_mountains_region,forbidden_lands_superregion,Female,J38
+14,L37,Mihitarab,5/5/4,55,"['mage_personality', 'just_personality', 'free_thinker_personality']",Solo,Seagaze,fahvanosy_region,west_sarhal_superregion,Female,N/A
+9,L41,Hasakely,3/2/4,53,"['well_advised_personality', 'loose_lips_personality', 'zealot_personality']",Raozey,Mpaomboly,fahvanosy_region,west_sarhal_superregion,Female,N/A
+8,L44,Ananiltra,4/3/1,30,['mage_personality'],Enampro,Dreamweaver,fahvanosy_region,west_sarhal_superregion,Male,L46
+10,L46,Amezajik,3/2/5,35,['strict_personality'],Volana,Stromcrowned,fahvanosy_region,west_sarhal_superregion,Female,L44
+7,R07,Rajnadhaga,3/3/1,31,['fertile_personality'],Anokhi,Khalon,shamakhad_region,rahen_superregion,Female,N/A
+9,R23,Keyattordha,4/4/1,44,[],Ramnath,oftheUndyingFlame,dhujat_region,rahen_superregion,Male,N/A
+7,R49,Parusad Bhola,5/1/1,53,[],Ramnath,oftheRubyGarden,rahen_coast_region,rahen_superregion,Male,N/A
+7,Y73,Sirtan,2/3/2,44,[],Tumata,Rantai,thidinkai_region,south_haless_superregion,Female,N/A
+11,Y76,Hebat Hari,3/6/2,32,[],Miri,JawakSinta,lupulan_rainforest_region,south_haless_superregion,Female,N/A
+8,Y77,Kaplakawan,3/3/2,26,[],Nanihi,Pelimkana,lupulan_rainforest_region,south_haless_superregion,Female,Y74
+8,Y80,Menek Poko,2/4/2,20,[],Tevai,Gunung,lupulan_rainforest_region,south_haless_superregion,Female,N/A
+10,Y93,Daengun,4/3/3,49,['kind_hearted_personality'],Gyuri,Choi,odheongu_region,north_haless_superregion,Female,Y95
+9,Z08,Bjarnrik,1/5/3,37,['well_connected_personality'],Grethe,Sidaett,dalr_region,gerudia_superregion,Female,Z11
+7,Z11,Sidaett,3/3/1,56,['calm_personality'],Svanhild,Ravman,dalr_region,gerudia_superregion,Female,Z11
+7,Z14,Avnkaup,3/2/2,31,['drunkard_personality'],Karin,Olavsby,gerudian_coast_region,gerudia_superregion,Female,Z14
+7,Z15,Urviksten,2/3/2,63,[],Jytte,ofUrviksten,gerudian_coast_region,gerudia_superregion,Female,Z15
+5,Z17,Obrtrol,0/0/5,43,[],Fulgurk'theSmasher',Stronghide,dalr_region,gerudia_superregion,Male,Z17
+7,Z18,Frozenmaw,2/5/0,31,[],Frida,Vrorensson,alenic_reach_region,gerudia_superregion,Female,Z45
+11,Z26,Adshaw,5/4/2,43,[],Myra,Vrorensson,alenic_reach_region,gerudia_superregion,Female,Z45

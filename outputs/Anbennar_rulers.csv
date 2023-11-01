@@ -1,0 +1,569 @@
+Total mana,TAG,Tag name,ADM/DIP/MIL,Age,Personalities,Name,Dynasty,Gender,Country region,Country superregion
+5,A01,Lorent,1/3/1,34,['benevolent_personality'],KylianVI,Siloriel,lencenor_region,western_cannor_superregion,Male
+11,A02,Deranne,2/4/5,20,['cruel_personality'],AdénnIII,sílDeranne,lencenor_region,western_cannor_superregion,Male
+13,A03,Redglades,6/6/1,245,"['immortal_personality', 'calm_personality', 'careful_personality']",Elthariel,Gladeguard,lencenor_region,western_cannor_superregion,Female
+3,A04,Wesdam,1/1/1,N/A,[],RegencyforLaurensSilmuna,N/A,west_dameshead_region,western_cannor_superregion,Male
+8,A05,Reveria,4/2/2,54,[],LothaneIII,sílRever,dragon_coast_region,western_cannor_superregion,Male
+15,A06,Nimscodd,4/5/6,240,"['immortal_personality', 'tactical_genius_personality']",Mordibam,Quintain,dragon_coast_region,western_cannor_superregion,Male
+5,A07,North Viswall,1/3/1,44,[],Darian,Longfellow,small_country_region,western_cannor_superregion,Male
+5,A08,South Viswall,3/1/1,44,[],ArnoltheFat,N/A,small_country_region,western_cannor_superregion,Male
+12,A09,Sorncost,5/5/2,70,"['midas_touched_personality', 'obsessive_perfectionist_personality']",PetranIII,sílSorncóst,lencenor_region,western_cannor_superregion,Male
+12,A10,Minaran Temple,4/4/4,18,[],AlessaofRoilsard,N/A,lencenor_region,western_cannor_superregion,Female
+11,A11,Pearlsedge,5/4/2,21,[],CaylenV,sílnaTrísfer,west_dameshead_region,western_cannor_superregion,Male
+12,A12,Beepeck,6/5/1,57,"['embezzler_personality', 'scholar_personality', 'entrepreneur_personality']",DevantheOldBee,N/A,damescrown_region,western_cannor_superregion,Male
+5,A13,Gawed,1/2/2,17,['drunkard_personality'],WelyamIII,Gerwick,alenic_frontier_region,western_cannor_superregion,Male
+13,A15,Eilisin,4/6/3,13,[],ReánnaII,sílEilísin,lencenor_region,western_cannor_superregion,Female
+6,A16,Wineport,2/2/2,34,[],ÉnritheTaster,N/A,lencenor_region,western_cannor_superregion,Male
+10,A17,Great Ording,2/2/6,46,[],CrestonIV,ofOrding,lencenor_region,western_cannor_superregion,Male
+13,A18,Rubenaire,4/3/6,20,['charismatic_negotiator_personality'],RiónV,sílRubenaire,lencenor_region,western_cannor_superregion,Male
+9,A19,Portnamm,2/3/4,212,"['immortal_personality', 'embezzler_personality']",PordoltSomberwazey,N/A,dragon_coast_region,western_cannor_superregion,Male
+10,A20,Rubyhold,3/3/4,92,['immortal_personality'],Gronmar,Redstone,lencenor_region,western_cannor_superregion,Male
+7,A21,Venail,1/5/1,300,"['immortal_personality', 'navigator_personality', 'expansionist_personality']",AldarianI,Seawatcher,lencenor_region,western_cannor_superregion,Male
+6,A22,Neckcliffe,4/0/2,45,[],RogercX,Cliffman,west_dameshead_region,western_cannor_superregion,Male
+9,A23,Vertesk,3/3/3,47,['mage_personality'],ArnosTordan,N/A,damescrown_region,western_cannor_superregion,Male
+8,A24,Westmoors,2/2/4,54,[],DevanIII,Cottersea,alenic_frontier_region,western_cannor_superregion,Male
+10,A25,Damescrown,6/2/2,83,[],AldrestheGold,N/A,damescrown_region,western_cannor_superregion,Male
+15,A26,Redscale Clan,5/5/5,24,"['strict_personality', 'cruel_personality']",Levaz,Sozax,dragon_coast_region,western_cannor_superregion,Male
+10,A27,Bluescale Clan,3/3/4,19,['tactical_genius_personality'],Tayekar,Crozamor,dragon_coast_region,western_cannor_superregion,Male
+9,A28,Greenscale Clan,3/4/2,44,"['navigator_personality', 'scholar_personality']",Dervaszix,Korlak,alenic_frontier_region,western_cannor_superregion,Male
+5,A29,Busilar,2/3/0,78,[],MarcanI,Silnara,businor_region,western_cannor_superregion,Male
+11,A30,Wex,2/3/6,43,"['conqueror_personality', 'mage_personality']",LothaneIII,sílWex,the_borders_region,western_cannor_superregion,Male
+11,A31,Moonhaven,6/1/4,241,['immortal_personality'],Varion'theYoung'#ThisisthegrandsonofVarilorBluetongue,Bluetongue,east_dameshead_region,western_cannor_superregion,Male
+6,A32,Ibevar,3/3/0,339,"['immortal_personality', 'craven_personality', 'careful_personality']",IbenionII,ta'Lunateín,forlorn_vale_region,western_cannor_superregion,Male
+16,A33,Verne,6/5/5,33,[],AlvarIV,sílVerne,east_dameshead_region,western_cannor_superregion,Male
+5,A34,Bisan,0/3/2,39,[],HaroldV,ofBisan,the_borders_region,western_cannor_superregion,Male
+3,A35,Konwell,3/0/0,38,[],HenricII,Konwell,esmaria_region,western_cannor_superregion,Male
+5,A36,Derwing,2/3/0,13,[],LainII,Derwing,damescrown_region,western_cannor_superregion,Male
+7,A37,Terr,2/4/1,N/A,[],RegencyforPetranVsílTerr,N/A,esmaria_region,western_cannor_superregion,Male
+6,A38,Anbenncost,2/2/2,N/A,[],CityCouncil,N/A,east_dameshead_region,western_cannor_superregion,Male
+12,A39,Bennon,2/4/6,33,[],AldresIII,sílBennon,esmaria_region,western_cannor_superregion,Male
+12,A40,Exwes,2/4/6,63,[],GodricII,Silcalas,west_dameshead_region,western_cannor_superregion,Male
+4,A41,Damish Temple,3/0/1,64,[],CalassínaArb,N/A,east_dameshead_region,western_cannor_superregion,Male
+10,A42,Silvelar,4/6/0,28,"['calm_personality', 'silver_tongue_personality']",Varil,sílObaithuan,east_dameshead_region,western_cannor_superregion,Male
+4,A43,Ryalan Temple,3/0/1,89,[],AdalaofEstallen,N/A,esmaria_region,western_cannor_superregion,Female
+9,A44,Esmaraine,3/6/0,46,"['intricate_web_weaver_personality', 'drunkard_personality']",Nara,Seinpírártharn,esmaria_region,western_cannor_superregion,Female
+7,A45,Istralore,1/1/5,21,[],AucannaI,Silistra,east_dameshead_region,western_cannor_superregion,Female
+9,A46,Arbaran,4/2/3,44,[],RicardI,Silcalas,alenic_frontier_region,western_cannor_superregion,Male
+12,A47,Eborthil,4/4/4,46,"['silver_tongue_personality', 'inspiring_leader_personality']",DelianII,Silebor,businor_region,western_cannor_superregion,Male
+12,A48,Sugamber,3/4/5,50,"['conqueror_personality', 'infertile_personality']",EwaldII,sílRhinmond,the_borders_region,western_cannor_superregion,Male
+12,A49,Hill Gnolls,2/5/5,29,['fierce_negotiator_personality'],Xanzerbexis,Queen-of-the-Hill,businor_region,western_cannor_superregion,Female
+6,A53,Aramari Temple,6/0/0,68,[],MariontheTransmuter,N/A,damescrown_region,western_cannor_superregion,Male
+5,A54,Crothan,3/1/1,52,['naive_personality'],Alain,sílMiosádh,damescrown_region,western_cannor_superregion,Male
+9,A55,Menibor,3/3/3,57,"['babbling_buffoon_personality', 'craven_personality']",Rogier,ofOldtower,east_dameshead_region,western_cannor_superregion,Male
+8,A56,Celliande,3/4/1,29,[],AlainII,sílAntirhalan,the_borders_region,western_cannor_superregion,Male
+11,A57,Toarnen,4/5/2,119,[],Valeran,"sílArannen#Arannen-Toarnenbranch,extinct",the_borders_region,western_cannor_superregion,Male
+8,A57,Toarnen,2/2/4,119,[],Alann,sílnaLoop#FromLoopuisinRoilsard,the_borders_region,western_cannor_superregion,Male
+8,A57,Toarnen,4/3/1,117,[],Reán,sílnaLoop,the_borders_region,western_cannor_superregion,Male
+5,A57,Toarnen,1/1/3,102,[],Varil,sílnaLoop,the_borders_region,western_cannor_superregion,Male
+8,A57,Toarnen,2/1/5,81,[],Emil,sílnaLoop,the_borders_region,western_cannor_superregion,Male
+7,A57,Toarnen,3/1/3,34,['obsessive_perfectionist_personality'],Adélaïde,sílnaLoop,the_borders_region,western_cannor_superregion,Female
+8,A59,Corvuria,2/2/4,43,[],DavanII,sílVivin,dostanor_region,escann_superregion,Male
+8,A60,Asheniande,2/2/4,17,[],ValeranIII,sílVivin,esmaria_region,western_cannor_superregion,Male
+3,A61,Bluehart,0/3/0,23,"['drunkard_personality', 'cruel_personality']",Trian,sílPíraire,east_dameshead_region,western_cannor_superregion,Male
+11,A62,Telgeir,4/4/3,42,[],ArtusII,ofVanbury,esmaria_region,western_cannor_superregion,Male
+9,A64,Appleton,3/3/3,23,[],ConradV,Appleseed,small_country_region,western_cannor_superregion,Male
+8,A65,Pearview,2/4/2,21,[],RodericII,Peartree,small_country_region,western_cannor_superregion,Male
+11,A72,Arannen,4/4/3,27,[],AustynIV,sílArannen,the_borders_region,western_cannor_superregion,Male
+8,A73,Silverforge,4/2/2,65,['immortal_personality'],FoldanIII,Silverhammer,esmaria_region,western_cannor_superregion,Male
+10,A74,Nathalaire,4/0/6,30,"['craven_personality', 'cruel_personality']",AdelinesílnaPírCeirese,N/A,daravans_folly_region,escann_superregion,Female
+3,A75,Gisden,0/2/1,11,[],BenarV,ofGisden,the_borders_region,western_cannor_superregion,Male
+12,A76,Uelaire,2/4/6,43,[],CasténIII,sílUelaire,damescrown_region,western_cannor_superregion,Male
+5,A77,Orda Aldresia,3/1/1,66,[],Delian,sílArannen,forlorn_vale_region,western_cannor_superregion,Male
+13,A81,Giberd,5/5/3,91,"['immortal_personality', 'scholar_personality', 'industrious_personality']",Delda,Glibgear,esmaria_region,western_cannor_superregion,Female
+12,A82,Napesbay,6/4/2,41,"['incorruptible_personality', 'lawgiver_personality']",Vincenio,sílCúnaicaire,east_dameshead_region,western_cannor_superregion,Male
+6,A83,Silent Repose,3/3/0,119,[],Orsander,ta'Nadostóiar,forlorn_vale_region,western_cannor_superregion,Male
+6,A84,Galeinn,3/1/2,32,[],AdrienIV,sílGaléinn,east_dameshead_region,western_cannor_superregion,Male
+11,A85,Magisterium,2/4/5,58,['mage_personality'],Crovan,ofVinerick,east_dameshead_region,western_cannor_superregion,Male
+18,A86,Tellum,6/6/6,39,"['intricate_web_weaver_personality', 'embezzler_personality']",Teagan,sílnaTíl,the_borders_region,western_cannor_superregion,Female
+2,A88,Woodwell,1/0/1,54,[],HumbertIV,Woodwell,west_dameshead_region,western_cannor_superregion,Male
+5,A89,Aranmas,1/3/1,54,[],AndrelV,sílAranmas,damescrown_region,western_cannor_superregion,Male
+6,A90,Seinathil,0/3/3,21,[],DaranI,Silistra,esmaria_region,western_cannor_superregion,Male
+6,A91,Deamoine,1/5/0,23,[],VincenII,sílDeamóine,esmaria_region,western_cannor_superregion,Male
+8,A92,Leslinpar,4/3/1,34,[],BrandonIII,sílLeslinpár,esmaria_region,western_cannor_superregion,Male
+9,A93,Estallen,3/3/3,31,['mage_personality'],LucianIV,sílEstallen,esmaria_region,western_cannor_superregion,Male
+9,A94,Gabmorionn,3/5/1,54,['mage_personality'],IsobelI,sílGabmórionn,esmaria_region,western_cannor_superregion,Female
+8,A95,Themarenn,4/2/2,15,[],VernellIII,sílThemarenn,esmaria_region,western_cannor_superregion,Male
+13,A98,Cestirande,3/4/6,41,[],VincenII,sílCestir,east_dameshead_region,western_cannor_superregion,Male
+5,A99,Varaine,1/1/3,23,[],TomásI,sílVarainé,esmaria_region,western_cannor_superregion,Male
+11,B02,Corintar,3/2/6,19,['inspiring_leader_personality'],Lothane'Bluetusk',Silmuna,south_castanor_region,escann_superregion,Male
+8,B03,Cobalt Company,2/1/5,57,['martial_educator_personality'],Gunther,ofMossford,west_castanor_region,escann_superregion,Male
+11,B04,Order of the Ashen Rose,3/3/5,34,['just_personality'],Maugunia,ofOrding,south_castanor_region,escann_superregion,Female
+12,B05,Pioneers Guild,3/6/3,254,"['immortal_personality', 'obsessive_perfectionist_personality', 'well_connected_personality']",Pondo,Fussbolt,inner_castanor_region,escann_superregion,Male
+10,B06,Warriors of Ancard,4/1/5,45,"['bold_fighter_personality', 'naive_personality']",Erela,Woodwell,west_castanor_region,escann_superregion,Female
+9,B07,Sons of Dameria,3/1/5,38,"['infertile_personality', 'inspiring_leader_personality']",Rogier,Silmuna,west_castanor_region,escann_superregion,Male
+6,B08,Gallant Friends,2/3/1,46,"['babbling_buffoon_personality', 'well_advised_personality']",Maurise,sílVarmas,south_castanor_region,escann_superregion,Male
+12,B09,House of Riches,6/4/2,39,"['midas_touched_personality', 'embezzler_personality']",ReánsílnaArasùil,N/A,west_castanor_region,escann_superregion,Male
+10,B10,Small Fellows,2/3/5,71,"['kind_hearted_personality', 'inspiring_leader_personality', 'obsessive_perfectionist_personality']",Dustin,Smallknight,west_castanor_region,escann_superregion,Male
+10,B11,Company of the Thorn,2/2/6,27,"['immortal_personality', 'cruel_personality']",Lucian,sílnaToars,forlorn_vale_region,western_cannor_superregion,Male
+10,B12,Brave Brothers,4/2/4,33,['inspiring_leader_personality'],Cicera,sílTreunnaire,west_castanor_region,escann_superregion,Female
+9,B13,Stalwart Band,4/0/5,44,"['strict_personality', 'drunkard_personality']",Urion,Davmor,south_castanor_region,escann_superregion,Male
+13,B14,Raven Banner,2/6/5,38,"['obsessive_perfectionist_personality', 'fierce_negotiator_personality']",Jergan,ofCorveld,south_castanor_region,escann_superregion,Male
+13,B15,New Wanderers,3/6/4,38,"['well_advised_personality', 'charismatic_negotiator_personality', 'mage_personality']",Entef,ofWibnuat,west_castanor_region,escann_superregion,Male
+10,B16,Anbenncost Expedition,5/3/2,38,"['scholar_personality', 'careful_personality']",Aril,Silgarion,forlorn_vale_region,western_cannor_superregion,Male
+12,B17,Asra Expedition,4/3/5,154,['immortal_personality'],Jarmun,Asra,west_dwarovar_region,west_serpentspine_superregion,Male
+9,B18,Iron Hammers,5/1/3,81,"['immortal_personality', 'architectural_visionary_personality', 'zealot_personality']",Kraig,Balgarsblood,inner_castanor_region,escann_superregion,Male
+12,B19,Sword Covenant,6/2/4,64,"['mage_personality', 'kind_hearted_personality']",Galinda,sílnaEán,west_castanor_region,escann_superregion,Female
+6,B20,Order of the Iron Sceptre,2/1/3,39,"['cruel_personality', 'mage_personality']",Aldred,sílTcháveren,south_castanor_region,escann_superregion,Male
+10,B21,Heartgrinder Clan,3/3/4,58,"['tolerant_personality', 'scholar_personality', 'sinner_personality']",Ghurâd,Heartgrinder,south_castanor_region,escann_superregion,Male
+8,B22,Venomtooth Clan,1/2/5,43,['tactical_genius_personality'],Aâdga,Venomtooth,west_castanor_region,escann_superregion,Female
+4,B23,Rotcleaver Clan,0/1/3,34,"['embezzler_personality', 'fierce_negotiator_personality']",Ugol,Rotcleaver,west_castanor_region,escann_superregion,Male
+14,B24,Clouded Eye Clan,6/6/2,76,"['lawgiver_personality', 'silver_tongue_personality', 'zealot_personality']",Grama,CloudedEye,inner_castanor_region,escann_superregion,Female
+13,B25,Bladebreaker Clan,4/3/6,43,"['bold_fighter_personality', 'inspiring_leader_personality', 'malevolent_personality']",Varok,Bladebreaker,inner_castanor_region,escann_superregion,Male
+11,B26,Severed Ear Clan,5/4/2,19,"['secretive_personality', 'intricate_web_weaver_personality']",Garm,SeveredEar,inner_castanor_region,escann_superregion,Male
+3,B27,Bonecarver Clan,0/1/2,30,['craven_personality'],Azukor,Bonecarver,west_castanor_region,escann_superregion,Male
+0,B28,Dogeater Clan,0/0/0,24,"['infertile_personality', 'babbling_buffoon_personality', 'drunkard_personality']",Dûsh,Dogeater,inner_castanor_region,escann_superregion,Male
+10,B29,Deadfang Clan,5/2/3,45,['midas_touched_personality'],Brog,Deadfang,south_castanor_region,escann_superregion,Male
+6,B30,Bloodgorger Clan,0/0/6,39,"['bold_fighter_personality', 'cruel_personality']",Zog,Bloodgorger,inner_castanor_region,escann_superregion,Male
+3,B36,Marrhold,2/0/1,69,['craven_personality'],Gryf'theOld',Marr,south_castanor_region,escann_superregion,Male
+7,B41,Earworm Tribe,4/1/2,30,"['cruel_personality', 'craven_personality']",Pagfil,Earworm,south_castanor_region,escann_superregion,Male
+9,B42,Groundhawk Tribe,3/3/3,31,"['industrious_personality', 'midas_touched_personality']",Jergel,Groundhawk,south_castanor_region,escann_superregion,Male
+9,B43,Flying Hound Tribe,1/5/3,35,"['expansionist_personality', 'naive_personality']",Elgek,FlyingHound,south_castanor_region,escann_superregion,Male
+8,B44,Flung Head Tribe,1/2/5,23,"['mage_personality', 'cruel_personality']",Gloxee,FlungHead,inner_castanor_region,escann_superregion,Female
+14,B45,Headwearer Tribe,2/6/6,43,"['craven_personality', 'lawgiver_personality']",Aminkle,Headwearer,west_castanor_region,escann_superregion,Male
+11,B46,Grasshopper Muncher Tribe,4/3/4,11,"['drunkard_personality', 'conqueror_personality']",Gramzik,GrasshopperMuncher,west_castanor_region,escann_superregion,Male
+11,B55,Counts League,2/4/5,53,['strict_personality'],Carleon,Blacktower,inner_castanor_region,escann_superregion,Male
+10,F21,Birsartanses,3/4/3,53,"['immortal_personality', 'lawgiver_personality']",KeladoraI,Birzartanzuir,bahar_region,bulwar_superregion,Female
+14,F22,Dartaxagerdim,3/6/5,43,['silver_tongue_personality'],Dartaxes,szel-Forramaz,bahar_region,bulwar_superregion,Male
+6,F24,Brasan,2/2/2,N/A,[],CityCouncil,N/A,bulwar_proper_region,bulwar_superregion,Male
+14,F25,Sareyand,4/5/5,426,[],EledasII,Sarelzuir,far_bulwar_region,bulwar_superregion,Male
+11,F25,Sareyand,6/5/0,192,"['immortal_personality', 'craven_personality', 'scholar_personality']",EledasIII,Sarelzuir,far_bulwar_region,bulwar_superregion,Male
+9,F26,Gelkalis,3/4/2,56,[],UmanI,szel-Gelkalis,harpy_hills_region,bulwar_superregion,Male
+10,F27,Harpylen,3/2/5,51,"['drunkard_personality', 'mage_personality']",IshtaraI,Firanyakin,harpy_hills_region,bulwar_superregion,Female
+9,F28,Tluukt,4/1/4,53,"['intricate_web_weaver_personality', 'cruel_personality', 'mage_personality']",Tluukt,Cleaver-of-Realms,bulwar_proper_region,bulwar_superregion,Female
+9,F29,Zokka,1/3/5,43,"['bold_fighter_personality', 'mage_personality']",Zokka,Devourer-of-Suns,far_bulwar_region,bulwar_superregion,Male
+4,F30,Kumarkand,2/1/1,39,[],TemenosII,szel-Kumarkand,bulwar_proper_region,bulwar_superregion,Male
+10,F31,Eduz-Vacyn,5/2/3,56,"['kind_hearted_personality', 'careful_personality', 'obsessive_perfectionist_personality']",Zaidszel-Vacyn,N/A,far_bulwar_region,bulwar_superregion,Male
+4,F32,Drolakand,2/1/1,24,[],ArahaI,szel-Drolakand,bulwar_proper_region,bulwar_superregion,Female
+5,F33,Akalses,1/3/1,60,[],SerimII,szel-Akalšes,bulwar_proper_region,bulwar_superregion,Male
+8,F34,Azka-Evran,2/1/5,103,"['strict_personality', 'immortal_personality']",DeggarionI,Evranzuir,bahar_region,bulwar_superregion,Male
+9,F35,Azkabar,4/2/3,28,"['secretive_personality', 'sinner_personality']",IskratesIV,szel-Attalu,bulwar_proper_region,bulwar_superregion,Male
+11,F36,Harklum,3/2/6,27,"['strict_personality', 'calm_personality']",ArashkIV,szel-Harklum,bulwar_proper_region,bulwar_superregion,Male
+9,F37,Irrliam,2/5/2,380,"['immortal_personality', 'charismatic_negotiator_personality', 'righteous_personality']",TaelariosI,Irrliazuir,bulwar_proper_region,bulwar_superregion,Male
+10,F39,Bulwar,5/3/2,46,"['righteous_personality', 'scholar_personality', 'obsessive_perfectionist_personality']",Mardin,Bilul-Yulun,bulwar_proper_region,bulwar_superregion,Male
+8,F40,Anzabad,0/5/3,43,"['embezzler_personality', 'navigator_personality']",UdishI,szal-Aban,bulwar_proper_region,bulwar_superregion,Male
+8,F41,Zanbar,3/4/1,23,['silver_tongue_personality'],RajinrarI,szal-Zanbar,bulwar_proper_region,bulwar_superregion,Male
+7,F42,Varamhar,2/1/4,234,"['immortal_personality', 'mage_personality']",KarodirI,Varamzuir,bulwar_proper_region,bulwar_superregion,Male
+6,F43,Zansap,2/4/0,N/A,[],RegencyforJareerszal-Barseen,N/A,bulwar_proper_region,bulwar_superregion,Male
+10,F44,Kalib,2/4/4,72,['inspiring_leader_personality'],QamaraI,szel-Azanerdu,bulwar_proper_region,bulwar_superregion,Female
+14,F46,Jaddari,3/6/5,283,"['immortal_personality', 'zealot_personality', 'conqueror_personality']",Jaddar,Jexiszuir,far_salahad_region,bulwar_superregion,Male
+11,F47,Verkal Gulan,4/1/6,52,"['immortal_personality', 'strict_personality', 'cruel_personality']",Urothr,oftheGate,middle_dwarovar_region,west_serpentspine_superregion,Male
+9,F48,Siadan,4/0/5,52,"['loose_lips_personality', 'bold_fighter_personality']",Astarta,Siadan,far_salahad_region,bulwar_superregion,Female
+12,F49,Elayenna,4/6/2,41,['charismatic_negotiator_personality'],Jasiene,Elayenna,far_salahad_region,bulwar_superregion,Female
+10,F50,Mulen,2/3/5,43,"['greedy_personality', 'mage_personality']",Kirisha,Mulen,far_salahad_region,bulwar_superregion,Female
+9,F54,Koggraffa,3/5/1,30,[],Khazet,Gifter-of-Chains,far_salahad_region,bulwar_superregion,Female
+8,F55,Kogzalla,1/3/4,30,[],Zykari,Gifter-of-Chains,gazraak_region,south_salahad_superregion,Female
+9,F56,Dasmatus,5/3/1,44,"['just_personality', 'infertile_personality']",Idras,szal-Maqet,far_salahad_region,bulwar_superregion,Male
+13,F60,Samsumbat,4/6/3,29,['charismatic_negotiator_personality'],Maracout,N/A,tijarikhet_region,west_sarhal_superregion,Male
+12,F61,Muhaqaar,3/5/4,31,['mage_personality'],Menes,N/A,tijarikhet_region,west_sarhal_superregion,Male
+11,F62,Duwarkani,6/3/2,55,[],Djehuty,Menkaunswid,tijarikhet_region,west_sarhal_superregion,Male
+13,F63,Aramoole,3/4/6,38,['mage_personality'],Tuharqmun,N/A,tijarikhet_region,west_sarhal_superregion,Male
+5,F65,Arbaxaz,0/2/3,20,[],Arbaxaz,Ravager-of-Cities,kubaci_region,fangaula_superregion,Male
+9,F69,Irkorzik,2/4/3,20,[],Irkorzik,Stalker-of-the-Sands,kubaci_region,fangaula_superregion,Female
+8,F71,Rakkaz,4/1/3,23,"['bold_fighter_personality', 'malevolent_personality']",RakkazII,Slayer-of-Slayers,gol_region,south_salahad_superregion,Female
+11,F72,Haraagtseda,4/2/5,23,"['inspiring_leader_personality', 'industrious_personality', 'reformist_personality']",Rozherg,Hammer-of-Kvanga,gazraak_region,south_salahad_superregion,Male
+11,G01,Boek,4/5/2,44,['silver_tongue_personality'],Kalin'do,Saiyiks,trollsbay_region,ruined_sea_superregion,Male
+9,G04,Yanek,2/2/5,24,[],Kalin'do,Toshdak,trollsbay_region,ruined_sea_superregion,Male
+8,G06,Cheshoshoanta,1/1/6,41,"['babbling_buffoon_personality', 'strict_personality']",Err'ir,Nitikskiks,reapers_coast_region,ruined_sea_superregion,Male
+9,G21,Pomvasonn,2/5/2,53,['benevolent_personality'],ShiranI,yenVasonn,epednan_expanse_region,ynn_superregion,Male
+7,G22,Svemel,2/5/0,53,[],GalmonizPomvasonn,N/A,rzenta_region,ynn_superregion,Male
+7,G23,Juzondezan,0/2/5,41,"['midas_touched_personality', 'strict_personality']",GardevojII,Vodynn,rzenta_region,ynn_superregion,Male
+11,G24,Gomosengha,5/5/1,55,"['calm_personality', 'strict_personality', 'scholar_personality']",Queen-RegentImariel,Drozmanag,rzenta_region,ynn_superregion,Male
+1,G25,Stantirshalas,1/0/0,66,[],RolatanI,yenStantir,dolindha_region,ynn_superregion,Male
+8,G26,Amacimst,1/6/1,54,"['calm_personality', 'kind_hearted_personality']",GelendirnII'theUnready',Sivasred,dolindha_region,ynn_superregion,Male
+6,G27,Brelar,4/2/0,51,['lawgiver_personality'],Kravendil,Saskjaro,dolindha_region,ynn_superregion,Male
+11,G28,Grebniesth,3/5/3,19,['zealot_personality'],MerijaI,yenGreb,dolindha_region,ynn_superregion,Female
+6,G29,Drevkenuc,2/4/0,19,"['mage_personality', 'benevolent_personality']",SariaI,yenDrev,dolindha_region,ynn_superregion,Female
+11,G30,Mocvare,5/1/5,41,"['industrious_personality', 'cruel_personality', 'strict_personality']",PjodornII'theGood',yenCeped,dolindha_region,ynn_superregion,Male
+13,G31,Vareynn,4/4/5,20,[],KirjonII,Rogavit,dolindha_region,ynn_superregion,Male
+13,G32,Malacnar,3/5/5,41,['charismatic_negotiator_personality'],Alvarad'Zabrmon'#meansDarkmoon,yenGala,dolindha_region,ynn_superregion,Male
+9,G33,Bosancovac,3/3/3,42,['babbling_buffoon_personality'],Morcu,yenGabhac,dolindha_region,ynn_superregion,Male
+11,G34,Arganjuzorn,3/2/6,33,[],PavloqirII,Uma-Zomaj,dolindha_region,ynn_superregion,Male
+1,G35,Arverynn,0/1/0,72,"['righteous_personality', 'drunkard_personality', 'malevolent_personality']",CalrodiyIV,Vyrekynn,sarda_region,ynn_superregion,Male
+7,G36,Trompolere,2/1/4,17,"['conqueror_personality', 'bold_fighter_personality', 'fierce_negotiator_personality']",AlaranI,yenCestor,sarda_region,ynn_superregion,Male
+8,G37,Fadhevych,3/3/2,58,[],DevynnI,Hradavych,sarda_region,ynn_superregion,Male
+11,G38,Vels Fadhecai,5/3/3,26,[],CeladilI,Konyrzab,sarda_region,ynn_superregion,Male
+10,G39,Adbrabohvi,4/5/1,60,[],Seronval,Belyr,sarda_region,ynn_superregion,Male
+7,G40,Tehanek,4/2/1,49,[],Mith'le,Emitahpahksaiyiks,trollsbay_region,ruined_sea_superregion,Female
+8,G41,Jayek,3/4/1,55,[],Seron'ar,Siljay#Oftheexiles(thisneedsarealtranslation),trollsbay_region,ruined_sea_superregion,Male
+11,G42,Inek,4/1/6,45,[],Ele'il,Inuksiks,trollsbay_region,ruined_sea_superregion,Male
+10,G43,Haraf,5/1/4,24,['lawgiver_personality'],Da'kino,Alas'gasidi,haraf_region,torn_sea_superregion,Male
+8,G46,Degakheion,3/0/5,43,"['strict_personality', 'martial_educator_personality', 'malevolent_personality']",Eboris,Rhadinos,alecand_region,kheionai_superregion,Male
+12,G47,Oktikheion,2/6/4,41,"['charismatic_negotiator_personality', 'secretive_personality', 'careful_personality']",Kelodus,Ekes,alecand_region,kheionai_superregion,Male
+8,G48,Kherka,4/1/3,61,"['industrious_personality', 'well_advised_personality', 'babbling_buffoon_personality']",Vyranos,Jahekles,alecand_region,kheionai_superregion,Male
+11,G49,Lokemeion,5/2/4,42,"['scholar_personality', 'tactical_genius_personality', 'drunkard_personality']",Urionis,Argyros,alecand_region,kheionai_superregion,Male
+9,G50,Ormam,3/4/2,36,"['entrepreneur_personality', 'embezzler_personality']",Airen,Valanne,alecand_region,kheionai_superregion,Male
+11,G51,Arpedifer,6/4/1,56,"['mage_personality', 'calm_personality', 'benevolent_personality']",Zaleria‘TheProtector’,Rhangabe,alecand_region,kheionai_superregion,Female
+12,G52,Ameion,3/4/5,45,"['lawgiver_personality', 'inspiring_leader_personality', 'conqueror_personality']",Laskaris'theConqueror',N/A,andic_reach_region,kheionai_superregion,Male
+9,G53,Empkeios,4/4/1,33,"['craven_personality', 'charismatic_negotiator_personality']",Thirendisus,Jesimia,devand_region,kheionai_superregion,Male
+8,G54,Besolaki,5/1/2,36,"['incorruptible_personality', 'naive_personality']",Leliatha,Elentios,devand_region,kheionai_superregion,Female
+10,G55,Eneion,3/4/3,42,"['architectural_visionary_personality', 'expansionist_personality']",NesterusMouzalon,N/A,devand_region,kheionai_superregion,Male
+10,G56,Deyeion,2/3/5,37,"['inspiring_leader_personality', 'bold_fighter_personality']",Elrianes,Politarus,andic_reach_region,kheionai_superregion,Male
+10,G57,Apikhoxi,6/3/1,53,"['just_personality', 'righteous_personality', 'scholar_personality']",Vakeres,Hasogos,devand_region,kheionai_superregion,Male
+9,G58,Keyolion,3/3/3,31,"['kind_hearted_personality', 'silver_tongue_personality']",Selussa,Delos,devand_region,kheionai_superregion,Female
+12,G59,Anisikheion,4/6/2,30,"['navigator_personality', 'midas_touched_personality']",OttolasKardanos,N/A,devand_region,kheionai_superregion,Male
+12,G62,Amgremos,3/6/3,52,"['fierce_negotiator_personality', 'obsessive_perfectionist_personality']",Ivranes,Kantakuzenos,andic_reach_region,kheionai_superregion,Male
+18,G64,Larankar,6/6/6,93,"['conqueror_personality', 'strict_personality', 'malevolent_personality']",ErankartheUnifier,Kaonrippavar,larankarha_highlands_region,greater_taychend_superregion,Male
+5,G71,Orenkoraim,2/2/1,55,['craven_personality'],AldatamIV,Nayak,taychend_region,greater_taychend_superregion,Male
+9,G74,Gophira,3/1/5,23,['bold_fighter_personality'],HarriharaX,Sangamar,taychend_region,greater_taychend_superregion,Male
+8,G82,Nagar Vyechei,2/5/1,55,"['mage_personality', 'entrepreneur_personality']",Jahlonand,Gelmarathi,taychend_region,greater_taychend_superregion,Male
+11,G84,Vels Bacar,1/5/5,23,"['just_personality', 'bold_fighter_personality']",ArtorayI,yenBacar,sarda_region,ynn_superregion,Male
+11,G85,Thromshana,4/3/4,48,"['careful_personality', 'craven_personality']",Liroy,Arkansyn,sarda_region,ynn_superregion,Male
+10,H01,Arakeprun,2/4/4,41,"['mage_personality', 'careful_personality']",Filnar,Dawnfire,glorelthir_region,eordand_superregion,Male
+10,H02,Murdkather,3/4/3,34,"['mage_personality', 'entrepreneur_personality']",Elthor,Longdream,sarmadfar_region,eordand_superregion,Male
+13,H03,Dearktir,5/3/5,35,['bold_fighter_personality'],Gelehorn,Strongarm,sarmadfar_region,eordand_superregion,Male
+10,H04,Elchos,3/5/2,31,['charismatic_negotiator_personality'],Manaron,Goldtree,glorelthir_region,eordand_superregion,Male
+10,H05,Kairncal,3/5/2,24,['navigator_personality'],Urion,Bluecrest,sarmadfar_region,eordand_superregion,Male
+10,H06,Sidpar,3/2/5,31,['charismatic_negotiator_personality'],Taelarian,Swiftsword,sarmadfar_region,eordand_superregion,Male
+10,H07,Bagcatir,3/4/3,28,['careful_personality'],Triandil,Nighteye,sarmadfar_region,eordand_superregion,Male
+12,H08,Pelomar,2/4/6,24,['inspiring_leader_personality'],PelodanX,Oathsworn,sarmadfar_region,eordand_superregion,Male
+11,H09,Iadth,4/3/4,35,['midas_touched_personality'],SharindelII,Lightkeeper,glorelthir_region,eordand_superregion,Female
+11,H10,Einnsag,5/4/2,26,"['mage_personality', 'industrious_personality']",Galinaldor,Oceansong,glorelthir_region,eordand_superregion,Male
+9,H11,Sglard,4/2/3,41,['industrious_personality'],JexassaII,Copperheart,glorelthir_region,eordand_superregion,Female
+12,H12,Raithtall,4/3/5,55,[],UrianII,Oakgardner,glorelthir_region,eordand_superregion,Male
+9,H12,Raithtall,4/1/4,29,['bold_fighter_personality'],DharastorIII,Oakgardner,glorelthir_region,eordand_superregion,Male
+10,H13,Jhorgashirr,3/3/4,24,"['mage_personality', 'bold_fighter_personality']",Jhorgas,Frostguard,randrunnse_region,eordand_superregion,Male
+10,H14,Eighard,3/2/5,34,['strict_personality'],Danaran,Autumnswrath,randrunnse_region,eordand_superregion,Male
+10,H15,Slegcal,3/5/2,44,['secretive_personality'],EwandilV,Firstborn,randrunnse_region,eordand_superregion,Male
+12,H16,Gemradcurt,4/2/6,24,"['mage_personality', 'conqueror_personality', 'malevolent_personality']",Immarel,Winterswrath,randrunnse_region,eordand_superregion,Female
+8,H17,Reotcrab,4/1/3,31,['midas_touched_personality'],ArdoranII,Winterstrider,randrunnse_region,eordand_superregion,Male
+10,H18,Gelcolle,5/2/3,37,['incorruptible_personality'],SerrondalII,Whitehand,randrunnse_region,eordand_superregion,Male
+9,H19,Strutmar,2/2/5,27,['conqueror_personality'],DanaranI,Truearrow,randrunnse_region,eordand_superregion,Male
+11,H20,Trimgarb,2/6/3,30,['conqueror_personality'],SarndelIII,Whispershadow,randrunnse_region,eordand_superregion,Female
+9,H25,Stenurynn,3/3/3,34,[],CalranvalIII,yenStenur,sarda_region,ynn_superregion,Male
+6,H26,Vels Domfan,2/1/3,44,[],Raymun,yenDomfan,sarda_region,ynn_superregion,Male
+11,H68,Ruby Company,4/3/4,92,"['immortal_personality', 'zealot_personality']",Kûrgûm,Gemseeker,west_dwarovar_region,west_serpentspine_superregion,Male
+11,H69,Forgemaster Union,3/4/4,82,['immortal_personality'],Khuznoli,Hammerfall,west_dwarovar_region,west_serpentspine_superregion,Male
+13,H70,Company of Duran Blueshield,5/5/3,154,['immortal_personality'],Duran,Blueshield,west_dwarovar_region,west_serpentspine_superregion,Male
+11,H71,Blackbeard Cartel,3/2/6,49,"['immortal_personality', 'strict_personality']",Dwosgraeg,Blackbeard,serpentreach_region,west_serpentspine_superregion,Male
+9,H72,Shattered Crown,3/2/4,32,[],Ghonor,Bordu,west_dwarovar_region,west_serpentspine_superregion,Male
+12,H73,Skewered Drake,4/3/5,39,[],Gashak,Gorrath,middle_dwarovar_region,west_serpentspine_superregion,Male
+11,H74,Chaingrasper,5/2/4,36,['mage_personality'],Dak,Chaingrasper,tree_of_stone_region,east_serpentspine_superregion,Male
+10,H75,Railskulker,2/4/4,32,['expansionist_personality'],Brack,Railskulker,west_dwarovar_region,west_serpentspine_superregion,Male
+14,H76,Arg-Ordstun,6/6/2,132,['immortal_personality'],ArdeginnXXII,Whiteforged,serpentreach_region,west_serpentspine_superregion,Female
+11,H77,Ovdal Lodhum,2/3/6,64,"['bold_fighter_personality', 'righteous_personality', 'expansionist_personality']",Gerin,Orcrend,serpentreach_region,west_serpentspine_superregion,Male
+13,H78,Seghdihr,6/1/6,162,['immortal_personality'],StorkhumlirXVIII,az-Segh,middle_dwarovar_region,west_serpentspine_superregion,Male
+13,H79,Ovdal Kanzad,5/3/5,182,"['immortal_personality', 'drunkard_personality', 'bold_fighter_personality']",KragarunLXIII,Powderkeg,tree_of_stone_region,east_serpentspine_superregion,Male
+10,H80,Siegebreaker,3/1/6,44,"['inspiring_leader_personality', 'bold_fighter_personality', 'fertile_personality']",Gurukk,Siegebreaker,west_dwarovar_region,west_serpentspine_superregion,Male
+11,H81,Masked Butcher,3/3/5,42,[],Vrirrig,Beardbutcher,serpentreach_region,west_serpentspine_superregion,Male
+12,H82,Greedy Grin,5/4/3,52,['mage_personality'],Frailtooth,GreedyGrin,middle_dwarovar_region,west_serpentspine_superregion,Male
+10,H83,Shadowdreamer,2/5/3,62,[],Zog,Shadowdreamer,middle_dwarovar_region,west_serpentspine_superregion,Male
+11,H84,Mountainshark,1/4/6,22,['bold_fighter_personality'],Nopels,Mountainshark,west_dwarovar_region,west_serpentspine_superregion,Female
+12,H85,Truedagger,4/6/2,52,['malevolent_personality'],Peon'No-nose',Truedagger,west_dwarovar_region,west_serpentspine_superregion,Male
+11,H86,Wretched Skull,4/3/4,42,[],Rurnom,WretchedSkull,west_dwarovar_region,west_serpentspine_superregion,Male
+12,H87,Thieving Arrow,3/5/4,42,['industrious_personality'],Nuldes'Rut',ThievingArrow,serpentreach_region,west_serpentspine_superregion,Male
+9,H88,Ambersniffer,3/3/3,42,[],Mit,Mit,tree_of_stone_region,east_serpentspine_superregion,Male
+9,H89,Snotfinger,3/2/4,42,['inspiring_leader_personality'],Rurnor,Snotfinger,west_dwarovar_region,west_serpentspine_superregion,Male
+8,H90,Spiderwretch,4/2/2,42,[],Rnam,Mnar,west_dwarovar_region,west_serpentspine_superregion,Male
+10,H91,Roadwarrior,5/0/5,62,[],Skoth'Chiefcleaver',Roadwarrior,west_dwarovar_region,west_serpentspine_superregion,Male
+11,H92,Poisoned Rock,5/3/3,42,[],Zigidix,Boardscratcher,tree_of_stone_region,east_serpentspine_superregion,Male
+9,H93,Dirtwater,2/1/6,32,[],Yeet,Harmbringer,tree_of_stone_region,east_serpentspine_superregion,Male
+14,I02,Krakdhumvror,5/5/4,146,['immortal_personality'],Garlim,Frozenforge,west_dwarovar_region,west_serpentspine_superregion,Male
+11,I26,Salla Elyn,4/4/3,201,"['immortal_personality', 'scholar_personality', 'navigator_personality']",Cinrthir,Elyn,west_deepwoods_region,deepwoods_superregion,Male
+11,I27,Salla Myna,5/4/2,92,"['immortal_personality', 'righteous_personality', 'calm_personality']",Bricena,Myna,west_deepwoods_region,deepwoods_superregion,Female
+11,I28,Salla Drennen,2/6/3,34,"['immortal_personality', 'mage_personality', 'silver_tongue_personality']",Narawen,Drennen,west_deepwoods_region,deepwoods_superregion,Female
+11,I29,Salla Cenag,4/2/5,83,"['immortal_personality', 'bold_fighter_personality', 'inspiring_leader_personality']",Alara,Cenág,west_deepwoods_region,deepwoods_superregion,Female
+11,I30,Salla Fealgarn,4/1/6,142,"['immortal_personality', 'bold_fighter_personality', 'tactical_genius_personality']",Oberon,Fealgarn,east_deepwoods_region,deepwoods_superregion,Male
+8,I33,Salla Ayeth,1/1/6,165,"['immortal_personality', 'tactical_genius_personality', 'craven_personality']",Irvah,Ayeth,east_deepwoods_region,deepwoods_superregion,Male
+8,I35,Brambleskinner,2/4/2,23,"['secretive_personality', 'zealot_personality\t']",Diznutz,Brambleskinner,west_deepwoods_region,deepwoods_superregion,Male
+6,I36,Spiked Log,3/2/1,23,"['craven_personality', 'drunkard_personality']",Cleesb,SpikedLog,east_deepwoods_region,deepwoods_superregion,Male
+6,I37,Verminhusk,2/1/3,39,"['well_advised_personality', 'cruel_personality', 'strict_personality']",Carg,Verminhusk,east_deepwoods_region,deepwoods_superregion,Male
+8,I38,Beasteater,1/1/6,30,"['bold_fighter_personality', 'conqueror_personality']",Vord,Beasteater,west_deepwoods_region,deepwoods_superregion,Male
+6,I39,Blightseed,2/1/3,24,['cruel_personality'],Bosk,Blightseed,east_deepwoods_region,deepwoods_superregion,Male
+9,I40,Cursed Howl,3/1/5,42,"['bold_fighter_personality', 'tactical_genius_personality']",Gordak,CursedHowl,east_deepwoods_region,deepwoods_superregion,Male
+9,I41,Sapchopper,3/1/5,42,"['inspiring_leader_personality', 'cruel_personality']",Khagor,Sapchopper,west_deepwoods_region,deepwoods_superregion,Male
+10,I42,Blackmoon,5/2/3,34,"['mage_personality', 'cruel_personality']",Relgakk,Blackmoon,east_deepwoods_region,deepwoods_superregion,Male
+6,I43,Silentblade,2/1/3,17,['martial_educator_personality'],Troknar,Silentblade,east_deepwoods_region,deepwoods_superregion,Male
+13,I44,Silvertusk,5/4/4,34,"['midas_touched_personality', 'cruel_personality']",Kharag,Silvertusk,east_deepwoods_region,deepwoods_superregion,Male
+14,I90,Maghargma,5/3/6,34,"['strict_personality', 'inspiring_leader_personality', 'fertile_personality']",Ziltagh,Gravelhide,ogre_mountains_region,forbidden_lands_superregion,Male
+11,J32,Mire Maw,3/3/5,38,['expansionist_personality'],Shrakk,MireMaw,serpents_vale_region,west_serpentspine_superregion,Male
+9,J35,Iltklerd,3/4/2,27,['craven_personality'],Oghan,Strongrock,ogre_mountains_region,forbidden_lands_superregion,Male
+9,J36,Kvakolba,3/4/2,47,"['calm_personality', 'midas_touched_personality']",Mughra,Stoneheart,ogre_mountains_region,forbidden_lands_superregion,Male
+9,J37,Olkhajukh,3/4/2,24,"['bold_fighter_personality', 'cruel_personality']",Vakrag,Steelgrinder,ogre_mountains_region,forbidden_lands_superregion,Male
+11,J39,Achtejardon,3/4/4,43,"['drunkard_personality', 'tactical_genius_personality']",Nargh,Chainlord,ogre_mountains_region,forbidden_lands_superregion,Male
+11,J40,Garsvulshim,5/4/2,26,"['scholar_personality', 'infertile_personality']",Rogha,Doomhunger,ogre_mountains_region,forbidden_lands_superregion,Male
+14,J41,Bronzegut,4/4/6,20,['strict_personality'],Sughra,Bronzegut,ogre_mountains_region,forbidden_lands_superregion,Male
+4,J42,Grey Fist,2/0/2,47,"['drunkard_personality', 'babbling_buffoon_personality', 'infertile_personality']",Tug,GreyFist,ogre_mountains_region,forbidden_lands_superregion,Male
+8,J43,Ironclaw,1/1/6,24,['conqueror_personality'],Jughra,Ironclaw,ogre_mountains_region,forbidden_lands_superregion,Male
+12,J44,Skull Gnasher,4/3/5,44,"['greedy_personality', 'martial_educator_personality']",Yaghrn,SkullGnasher,ogre_mountains_region,forbidden_lands_superregion,Male
+9,J45,Trunk Basher,3/2/4,22,['naive_personality'],Pog,TrunkBasher,ogre_mountains_region,forbidden_lands_superregion,Male
+15,J46,Frosthide,5/5/5,25,['mage_personality'],Karigan,Frosthide,ogre_mountains_region,forbidden_lands_superregion,Male
+0,L01,Kuiika,0/0/0,N/A,[],N/A,N/A,horashesh_region,west_sarhal_superregion,Male
+0,L03,Isagumze,0/0/0,N/A,[],N/A,N/A,horashesh_region,west_sarhal_superregion,Male
+0,L04,Saqraxat,0/0/0,N/A,[],N/A,N/A,horashesh_region,west_sarhal_superregion,Male
+0,L05,Iqhekabi,0/0/0,N/A,[],N/A,N/A,horashesh_region,west_sarhal_superregion,Male
+0,L06,Ruvuma,0/0/0,N/A,[],N/A,N/A,horashesh_region,west_sarhal_superregion,Male
+0,L07,Imbushid,0/0/0,N/A,[],N/A,N/A,horashesh_region,west_sarhal_superregion,Male
+0,L08,Kulugiash,0/0/0,N/A,[],N/A,N/A,horashesh_region,west_sarhal_superregion,Male
+0,L09,Zuvavim,0/0/0,N/A,[],N/A,N/A,horashesh_region,west_sarhal_superregion,Male
+0,L12,Gomuvuri,0/0/0,N/A,[],N/A,N/A,horashesh_region,west_sarhal_superregion,Male
+0,L13,Samishesha,0/0/0,N/A,[],N/A,N/A,dao_nako_region,fangaula_superregion,Male
+5,L34,Tvarateram,2/1/2,63,"['infertile_personality', 'loose_lips_personality', 'calm_personality']",ManadafyI,Ashfarmer,fahvanosy_region,west_sarhal_superregion,Male
+10,L36,Lelanan,5/5/0,99,"['reformist_personality', 'pious_personality', 'incorruptible_personality']",Rangita,Tallfriend,fahvanosy_region,west_sarhal_superregion,Female
+10,L37,Mihitarab,3/6/1,57,"['careful_personality', 'charismatic_negotiator_personality', 'well_advised_personality']",Felana,Mouthersbane,fahvanosy_region,west_sarhal_superregion,Female
+8,L38,Rayafo,4/4/0,49,"['righteous_personality', 'free_thinker_personality']",Monja,Meblic,fahvanosy_region,west_sarhal_superregion,Male
+11,L39,Jakannakazy,3/5/3,32,"['pious_personality', 'silver_tongue_personality']",Zalifa,Bananabrewer,fahvanosy_region,west_sarhal_superregion,Female
+11,L40,Maranakavi,4/3/4,29,['incorruptible_personality'],Andrianary,Coastwalker,fahvanosy_region,west_sarhal_superregion,Male
+11,L41,Hasakely,4/5/2,58,"['silver_tongue_personality', 'charismatic_negotiator_personality', 'calm_personality']",Olokedry,Hasakely,fahvanosy_region,west_sarhal_superregion,Male
+11,L42,Tibokbo,4/2/5,27,['just_personality'],Lalao,Huntsmarshal,fahvanosy_region,west_sarhal_superregion,Female
+10,L43,Sisinybohi,4/4/2,56,"['scholar_personality', 'architectural_visionary_personality']",Rivomanantsoa,Trunkbellow,fahvanosy_region,west_sarhal_superregion,Male
+11,L44,Ananiltra,3/2/6,27,"['strict_personality', 'conqueror_personality']",FelanaII,Stromcrowned,fahvanosy_region,west_sarhal_superregion,Female
+12,L45,Oronsinoma,4/6/2,43,"['entrepreneur_personality', 'embezzler_personality']",Solo,Foamrider,fahvanosy_region,west_sarhal_superregion,Male
+8,L46,Amezajik,2/4/2,44,"['secretive_personality', 'midas_touched_personality', 'embezzler_personality']",Mandafy,Dreamweaver,fahvanosy_region,west_sarhal_superregion,Male
+9,L47,Mazanosy,2/5/2,36,"['navigator_personality', 'entrepreneur_personality']",Azaly,Spicetrader,fahvanosy_region,west_sarhal_superregion,Male
+9,L48,Ataturozi,3/1/5,30,"['zealot_personality', 'strict_personality']",Rakoto,Stoneheart,fahvanosy_region,west_sarhal_superregion,Male
+11,L50,Tsanizadai,5/5/1,34,['well_connected_personality'],Emampro,Erfara,fahvanosy_region,west_sarhal_superregion,Male
+9,L52,Bamdikizy,4/2/3,69,"['calm_personality', 'reformist_personality', 'naive_personality']",Volana,Ranmaro,fahvanosy_region,west_sarhal_superregion,Female
+11,L53,Tiboktsamo,5/3/3,69,"['industrious_personality', 'strict_personality', 'obsessive_perfectionist_personality']",Andrianary,Longwatch,fahvanosy_region,west_sarhal_superregion,Male
+12,L63,Butuguzi,4/6/2,56,"['craven_personality', 'lawgiver_personality', 'scholar_personality']",AiYiIshimwe,N/A,guifa_zahab_region,east_sarhal_superregion,Female
+6,L65,Melakmengi,0/0/6,1442,"['immortal_personality', 'just_personality', 'bold_fighter_personality']",TheAngelKamniel,N/A,gebahiri_region,east_sarhal_superregion,Male
+11,L66,Simegasa,4/4/3,44,"['strict_personality', 'malevolent_personality']",DejenII,ijeHajo-Abera,mengi_region,east_sarhal_superregion,Male
+4,L68,Karassk,0/3/1,16,"['craven_personality', 'embezzler_personality']",KroraszV,Godseeker,karassk_region,south_sarhal_superregion,Male
+15,L69,Zerat,4/6/5,166,[],TeranakX'theOld',Scaleguard,zerat_region,south_sarhal_superregion,Male
+7,L69,Zerat,2/4/1,116,[],VarthessashII,Scaleguard,zerat_region,south_sarhal_superregion,Male
+11,L69,Zerat,4/4/3,48,"['malevolent_personality', 'craven_personality']",QakotII,Scaleguard,zerat_region,south_sarhal_superregion,Male
+8,L70,Khugra,2/4/2,42,"['intricate_web_weaver_personality', 'cruel_personality']",ShaordashIV,Wavelistener,karassk_region,south_sarhal_superregion,Male
+14,L71,Nazhni,5/3/6,18,['embezzler_personality'],ItrosI,Duskrunner,karassk_region,south_sarhal_superregion,Male
+7,L72,Zatsuti,0/3/4,46,"['malevolent_personality', 'obsessive_perfectionist_personality']",NulriI,Starlance,karassk_region,south_sarhal_superregion,Male
+9,L74,Zatal,3/2/4,21,['babbling_buffoon_personality'],DaukazoskI,Bloodscale,zerat_region,south_sarhal_superregion,Male
+12,L75,Kakhazajar,2/5/5,39,['calm_personality'],Teran,Swampstalker,zerat_region,south_sarhal_superregion,Male
+5,L76,Gasha,3/2/0,22,['calm_personality'],KarqutI,Calmfang,zerat_region,south_sarhal_superregion,Male
+12,L77,Karach,3/3/6,32,['industrious_personality'],SiltaruI,Sungold,zerat_region,south_sarhal_superregion,Male
+11,L79,Rshak,4/4/3,28,['scholar_personality'],IslesundI,Wiseblood,zerat_region,south_sarhal_superregion,Male
+13,L80,Zulbur,4/5/4,17,['free_thinker_personality'],RelorkI,Stonecarver,odu_kherass_region,south_sarhal_superregion,Male
+10,L81,Yassa,2/3/5,54,"['scholar_personality', 'naive_personality', 'tactical_genius_personality']",IrdarI,Skyfoam,zerat_region,south_sarhal_superregion,Male
+8,L83,Shangra,5/1/2,33,"['well_connected_personality', 'scholar_personality']",ImuxVI,Starseer,odu_kherass_region,south_sarhal_superregion,Male
+5,L84,Shalazar,0/5/0,47,"['secretive_personality', 'infertile_personality', 'obsessive_perfectionist_personality']",ItrosX,Moonwarden,odu_kherass_region,south_sarhal_superregion,Male
+10,L85,Ashakani,4/4/2,18,['free_thinker_personality'],AguntatI,Starcaller,odu_kherass_region,south_sarhal_superregion,Male
+9,L88,Abussa,2/4/3,20,['calm_personality'],TotrazI,Foreststrider,zerat_region,south_sarhal_superregion,Male
+12,L89,Tsuz,5/2/5,18,['calm_personality'],TotrazI,Brightscale,zerat_region,south_sarhal_superregion,Male
+8,L90,Ashkha,2/4/2,22,['zealot_personality'],EtocardI,Everwatcher,zerat_region,south_sarhal_superregion,Male
+7,L92,Tsurin,4/0/3,19,[],KroraszI,Holyscale,zerat_region,south_sarhal_superregion,Male
+5,L94,Shagadyrra,1/3/1,N/A,[],WaterCouncil,N/A,karassk_region,south_sarhal_superregion,Male
+16,L95,Rayaz,6/4/6,41,"['strict_personality', 'inspiring_leader_personality']",SykarI,Riverclaw,zerat_region,south_sarhal_superregion,Male
+8,L96,Asarta,4/0/4,35,"['inspiring_leader_personality', 'martial_educator_personality']",KatyradzI,Riverclaw,karassk_region,south_sarhal_superregion,Male
+6,L97,Arazin,3/2/1,32,"['incorruptible_personality', 'naive_personality']",AyralgazI,Riverclaw,zerat_region,south_sarhal_superregion,Male
+10,L99,Katsanada,5/0/5,15,['midas_touched_personality'],KazrekIII,Greenstalker,zerat_region,south_sarhal_superregion,Male
+10,R01,Avhavubhiya,3/5/2,27,[],Jadur,oftheSilverLash,rahen_coast_region,rahen_superregion,Male
+8,R02,Sarkhashabid,1/3/4,45,[],Virajdendar,oftheGrandPaw,rahen_coast_region,rahen_superregion,Male
+12,R03,Davharral,3/5/4,33,[],Shivar,ofthePouncingTower,far_salahad_region,bulwar_superregion,Male
+12,R04,Iyarhashar,3/5/4,55,[],Naramar,oftheAzureHide,rahen_coast_region,rahen_superregion,Male
+10,R05,Tughayasa,3/4/3,23,['mage_personality'],Devaraya,Kamadeva,dhujat_region,rahen_superregion,Male
+14,R06,Babhagama,6/3/5,46,[],Mahipalar,oftheFlowerOath,rakhadesh_region,rahen_superregion,Male
+9,R07,Rajnadhaga,1/5/3,34,['fierce_negotiator_personality'],IshnarVII,Jhuti,shamakhad_region,rahen_superregion,Male
+8,R08,Tiltaghar,1/1/6,29,[],Sahtiyar,oftheFallingClaw,shamakhad_region,rahen_superregion,Male
+15,R09,Parraj,5/4/6,24,[],Maurayadhwaj,oftheFlowerOath,shamakhad_region,rahen_superregion,Male
+12,R10,Sarnavan,3/4/5,58,[],Laxanyar,oftheLotusClaw,shamakhad_region,rahen_superregion,Male
+10,R12,Tilathi,4/2/4,75,[],Ajnor,oftheBoundlessSpirit,shamakhad_region,rahen_superregion,Male
+7,R15,Nundujisbid,1/4/2,41,[],SahujiBhar,N/A,dhujat_region,rahen_superregion,Male
+10,R19,Sharaajaghal,3/5/2,52,[],Vijaysen,oftheDesertThunder,dhujat_region,rahen_superregion,Male
+7,R20,Pordhatti,3/2/2,67,[],Anevyenghur,oftheWhitePaw,dhujat_region,rahen_superregion,Male
+11,R21,Sarisung,3/3/5,31,[],HaripanttheSly,N/A,dhujat_region,rahen_superregion,Male
+10,R22,Khirnadhiman,1/3/6,35,[],Hemantsenar,oftheEndlessMoon,dhujat_region,rahen_superregion,Male
+3,R23,Keyattordha,1/1/1,N/A,['kind_hearted_personality'],RegencyforShushurioftheBloodyClaw,N/A,dhujat_region,rahen_superregion,Male
+12,R24,Thadarsaghol,5/3/4,62,[],Vallasenar,oftheImperiousStripe,dhujat_region,rahen_superregion,Male
+11,R25,Rayavhatimana,5/4/2,34,[],Ayusar,oftheHeavenlyLotus,dhujat_region,rahen_superregion,Male
+13,R26,Khiraspid,3/6/4,35,"['mage_personality', 'secretive_personality']",Mahipalar,ofthePiercingEye,dhujat_region,rahen_superregion,Male
+7,R33,Ghattub,2/4/1,40,[],Vasumtir,oftheWhiteStripe,rakhadesh_region,rahen_superregion,Male
+7,R34,Kamapar,2/2/3,37,[],Gopalar,oftheFlowerOath,shamakhad_region,rahen_superregion,Male
+11,R36,Endhuvi,2/3/6,44,[],Vapyatar,oftheWhisperingFist,dhujat_region,rahen_superregion,Male
+10,R37,Kethur,2/2/6,42,[],HarimartheStriped,N/A,dhujat_region,rahen_superregion,Male
+10,R38,Bhuvauri,4/2/4,29,"['righteous_personality', 'lawgiver_personality']",Balinarayan,Tikatishu,rahen_coast_region,rahen_superregion,Male
+7,R39,Amtarim,3/2/2,36,[],Chandrasen,oftheNobleStripes,rahen_coast_region,rahen_superregion,Male
+9,R40,Ghundagar,5/2/2,37,[],Kirtir,oftheImperiousStripe,rahen_coast_region,rahen_superregion,Male
+4,R41,Amtujsaat,2/1/1,67,[],Jayapalar,oftheGoldenPaw,rahen_coast_region,rahen_superregion,Male
+9,R42,Tudhina,3/2/4,40,[],Jyotirishwar,oftheDiligentCoil,rakhadesh_region,rahen_superregion,Male
+10,R43,Tujgal,1/4/5,34,[],Vasudev,oftheFeigningClaw,rahen_coast_region,rahen_superregion,Male
+10,R44,Shenral,3/3/4,23,[],Ghoshar,oftheVengefulGaze,rahen_coast_region,rahen_superregion,Male
+12,R45,Umdaj,4/3/5,39,[],Prannath,oftheShiningTooth,rahen_coast_region,rahen_superregion,Male
+11,R46,Setarudhar,4/5/2,34,[],Raghudevar,oftheThousandStrikes,dhujat_region,rahen_superregion,Male
+8,R47,Setarbul,2/2/4,31,[],Virajdendranarayan,oftheThousandStrikes,dhujat_region,rahen_superregion,Male
+8,R48,Setapsim,2/2/4,45,[],Dhasvas,oftheThousandStrikes,rakhadesh_region,rahen_superregion,Male
+11,R49,Parusad Bhola,2/4/5,33,['intricate_web_weaver_personality'],Miyana,oftheRubyGarden,rahen_coast_region,rahen_superregion,Female
+9,R50,Rabaghekhur,3/2/4,43,[],Birnayar,oftheCrouchingShadow,rahen_coast_region,rahen_superregion,Male
+4,R51,Dhenijanraj,1/2/1,84,"['kind_hearted_personality', 'craven_personality', 'naive_personality']",Indranayar,oftheLotusClaw,rahen_coast_region,rahen_superregion,Male
+13,R52,Rabhidaraj,6/3/4,35,[],Manava,oftheBloodyClaw,rahen_coast_region,rahen_superregion,Male
+9,R53,Dhenijansar,3/1/5,54,[],Ganyakanar,oftheLotusClaw,rahen_coast_region,rahen_superregion,Male
+10,R54,Parusahan Saya,2/5/3,25,[],Mahindranar,oftheScarredHide,rahen_coast_region,rahen_superregion,Male
+11,R55,Dhurajaghan,5/2/4,52,[],Pusyamitar,oftheEnlightenedStar,dhujat_region,rahen_superregion,Male
+9,R56,Saddathar,1/2/6,15,[],Vijaysenar,oftheSavageJolt,rakhadesh_region,rahen_superregion,Male
+10,R57,Parus Panasur,1/4/5,43,[],Vasudevar,oftheGoldenPaw,rahen_coast_region,rahen_superregion,Male
+11,R58,Sardiphadin,5/3/3,51,[],Balabhatar,oftheForkedWaters,rahen_coast_region,rahen_superregion,Male
+11,R59,Khappur,2/6/3,44,[],BaoLi,N/A,dhujat_region,rahen_superregion,Male
+10,R60,Sarkhani,5/3/2,34,[],LornRamathipatei,N/A,dhujat_region,rahen_superregion,Male
+12,R61,Pasiragha,5/4/3,56,[],Arimar,oftheEnlightenedStar,rakhadesh_region,rahen_superregion,Male
+16,R62,The Command,5/5/6,48,"['conqueror_personality', 'tactical_genius_personality', 'inspiring_leader_personality']",Moguwon,Wolfborn,shamakhad_region,rahen_superregion,Male
+11,R63,Thunderfist Clan,3/4/4,34,[],Ordash,Thunderfist,shamakhad_region,rahen_superregion,Male
+10,R64,Bloodsong Clan,3/3/4,34,[],Brovag,Bloodsong,shamakhad_region,rahen_superregion,Male
+10,R65,Blackstep Clan,4/4/2,34,[],Khitro,Blackstep,jade_mines_region,east_serpentspine_superregion,Male
+9,R66,Stolen Gem Clan,4/2/3,34,[],Naum,StolenGem,jade_mines_region,east_serpentspine_superregion,Male
+4,S11,Natani,1/1/2,34,"['bold_fighter_personality', 'loose_lips_personality']",SykarI,Clearnight,odu_kherass_region,south_sarhal_superregion,Male
+5,S12,Ksataza,1/1/3,58,"['bold_fighter_personality', 'careful_personality', 'incorruptible_personality']",AnzadzaI,Starwalker,odu_kherass_region,south_sarhal_superregion,Male
+8,S13,Golkhi,4/2/2,19,['well_connected_personality'],SiltaruI,Riverspear,zerat_region,south_sarhal_superregion,Male
+6,S14,Ishalani,3/3/0,20,['babbling_buffoon_personality'],AyralgazI,Stargazer,karassk_region,south_sarhal_superregion,Male
+10,S15,Karshyr,1/4/5,28,"['fierce_negotiator_personality', 'mage_personality']",DzankotIII,Seabreaker,karassk_region,south_sarhal_superregion,Male
+11,S24,Fuulmana,4/5/2,28,['silver_tongue_personality'],IfaIII,ijeTamru-Baati,mengi_region,east_sarhal_superregion,Male
+7,S25,Fetengoni,2/4/1,53,"['well_advised_personality', 'drunkard_personality', 'craven_personality']",OweV,ijeKajen-Aban,mengi_region,east_sarhal_superregion,Male
+11,S26,Saposakosa,4/4/3,54,"['architectural_visionary_personality', 'careful_personality', 'calm_personality']",AanteII,ijeUmat-Defen,mengi_region,east_sarhal_superregion,Male
+9,S27,Mwasagore,3/3/3,30,"['careful_personality', 'entrepreneur_personality', 'infertile_personality']",Mwasagore,Gulimbazimneba,guifa_zahab_region,east_sarhal_superregion,Female
+11,S28,Kwizera,4/1/6,31,"['mage_personality', 'mongoose_shifter_personality', 'malevolent_personality']",Kwizera'Gatebreaker',Snakekiller,guifa_zahab_region,east_sarhal_superregion,Female
+11,S29,Akaliza,3/5/3,34,"['charismatic_negotiator_personality', 'inspiring_leader_personality', 'righteous_personality']",Akaliza,Frogfriend,guifa_zahab_region,east_sarhal_superregion,Female
+0,S30,Death_Bringing_Cobra,0/0/0,N/A,[],N/A,N/A,guifa_zahab_region,east_sarhal_superregion,Male
+8,S31,Umutukomye,0/4/4,28,"['silver_tongue_personality', 'bold_fighter_personality', 'greedy_personality']",Umutukomye,Snakekiller,guifa_zahab_region,east_sarhal_superregion,Female
+7,S32,Gahigi,2/2/3,26,"['leopard_shifter_personality', 'secretive_personality', 'martial_educator_personality']",Gahigi,Mushubi,guifa_zahab_region,east_sarhal_superregion,Male
+7,S33,T_Red_Fanged_Gorilla,2/2/3,26,['greedy_personality'],Shongwe,Mushubi,guifa_guyamva_region,east_sarhal_superregion,Male
+7,S34,T_Cunning_River_Eel,2/2/3,26,['greedy_personality'],Shongwe,Mushubi,guifa_guyamva_region,east_sarhal_superregion,Male
+7,S35,T_Well_Fed_Elephant,2/2/3,26,['greedy_personality'],Shongwe,Mushubi,guifa_guyamva_region,east_sarhal_superregion,Male
+7,S36,T_Stealthy_Duiker,2/2/3,26,['greedy_personality'],Shongwe,Mushubi,guifa_guyamva_region,east_sarhal_superregion,Male
+7,S37,T_Swift_Legged_Bongo,2/2/3,26,['greedy_personality'],Shongwe,Mushubi,guifa_guyamva_region,east_sarhal_superregion,Male
+7,S38,T_Work_Doing_Hippo,2/2/3,26,['greedy_personality'],Shongwe,Mushubi,guifa_guyamva_region,east_sarhal_superregion,Male
+7,S39,T_Hut_Building_Weaver_Bird,2/2/3,26,['greedy_personality'],Shongwe,Mushubi,guifa_guyamva_region,east_sarhal_superregion,Male
+7,S40,T_Forest_Hiding_Okapi,2/2/3,26,['greedy_personality'],Shongwe,Mushubi,guifa_guyamva_region,east_sarhal_superregion,Male
+7,S41,T_Prey_Finding_Leopard,2/2/3,26,['greedy_personality'],Shongwe,Mushubi,guifa_guyamva_region,east_sarhal_superregion,Male
+7,S42,T_Friend_Helping_Parrot,2/2/3,26,['greedy_personality'],Shongwe,Mushubi,guifa_guyamva_region,east_sarhal_superregion,Male
+7,S43,T_Violent_Hearted_Goose,2/2/3,26,['greedy_personality'],Shongwe,Mushubi,guifa_guyamva_region,east_sarhal_superregion,Male
+11,S44,Matamot,2/5/4,25,['silver_tongue_personality'],AbanIV,ijeMelas-Akau,mengi_region,east_sarhal_superregion,Male
+9,S46,Dugiti,5/2/2,37,"['entrepreneur_personality', 'loose_lips_personality']",TamratI,ijeYemane-Calib,mengi_region,east_sarhal_superregion,Male
+12,S50,Yemotaferi,4/4/4,51,['scholar_personality'],KidusTasifa,N/A,mengi_region,east_sarhal_superregion,Male
+10,S51,Sedarketema,1/3/6,31,[],Harafari,ijeTistria-Reshi,mengi_region,east_sarhal_superregion,Male
+11,S52,Teleksemayi,5/2/4,39,"['reformist_personality', 'malevolent_personality']",DaweranII,ijeTikur-Beri,mengi_region,east_sarhal_superregion,Male
+11,S53,Averilibet,2/3/6,22,['leopard_shifter_personality'],MerimaII,Inyaswarosa,mengi_region,east_sarhal_superregion,Female
+9,S54,Layinret,3/2/4,32,"['drunkard_personality', 'midas_touched_personality']",BupafayeI,ijeJadiku-Yemane,mengi_region,east_sarhal_superregion,Male
+8,S55,Ketemcaka,4/2/2,19,['embezzler_personality'],SaamirI,ijeDevhane-Owe,mengi_region,east_sarhal_superregion,Male
+9,S56,Enikmesiki,3/1/5,42,"['strict_personality', 'bold_fighter_personality']",Tariku,ijeSabiku-Tariku,mengi_region,east_sarhal_superregion,Male
+6,S57,Shelokmengi,2/2/2,N/A,[],RegencyforAyufariijeMelaku-Goshan,N/A,mengi_region,east_sarhal_superregion,Male
+13,S58,Werikgeta,3/5/5,44,"['infertile_personality', 'intricate_web_weaver_personality', 'greedy_personality']",BehishanII,ijeBona-Yadata,mengi_region,east_sarhal_superregion,Male
+10,S59,Wezingoa,5/3/2,44,"['drunkard_personality', 'mage_personality']",AberashIII,ijeBirra-Bonsa,mengi_region,east_sarhal_superregion,Male
+10,S60,Meretgaban,1/5/4,52,"['entrepreneur_personality', 'craven_personality', 'midas_touched_personality']",Amadi,ijeAbdi-Amadi,mengi_region,east_sarhal_superregion,Male
+13,S61,Ibekisedara,4/4/5,45,"['drunkard_personality', 'well_advised_personality', 'martial_educator_personality']",TesfayeVI,ijeMebden-Jalagas,mengi_region,east_sarhal_superregion,Male
+8,S62,Kadamuu,3/4/1,46,"['charismatic_negotiator_personality', 'calm_personality']",Afework,ijeKali-Shemane,mengi_region,east_sarhal_superregion,Male
+11,S63,Bosonkikon,2/4/5,37,"['tactical_genius_personality', 'inspiring_leader_personality']",LishanI,ijeRifan-Afu,mengi_region,east_sarhal_superregion,Male
+8,S66,Mewomender,3/4/1,46,"['free_thinker_personality', 'infertile_personality']",RadinIII,ijeBona-Satifari,mengi_region,east_sarhal_superregion,Male
+9,S67,Manta,2/1/6,55,"['martial_educator_personality', 'strict_personality', 'naive_personality']",JishanIII,ijeKiros-Jenas,mengi_region,east_sarhal_superregion,Male
+12,S70,Yezel Mora Horde,4/2/6,21,"['conqueror_personality', 'bold_fighter_personality']",Adurmag,'TheNailedOne',fahvanosy_region,west_sarhal_superregion,Male
+9,U01,Kheterata,3/3/3,23,[],SemutIII,Crodamos,kheterata_region,north_salahad_superregion,Male
+9,U02,Nirat,3/3/3,31,['pious_personality'],NahabtheDefiant,N/A,kheterata_region,north_salahad_superregion,Male
+11,U05,Elizna,5/4/2,75,"['immortal_personality', 'naive_personality', 'tolerant_personality']",OlorisI,Vulzinzuir,kheterata_region,north_salahad_superregion,Male
+9,U07,Viakkoc,2/1/6,20,[],ViakkocXI,Scourge-of-All-Seas,akan_region,north_salahad_superregion,Male
+7,U08,Ekha,2/2/3,39,[],ModumanII,Akanras,akan_region,north_salahad_superregion,Male
+13,U09,Gnollakaz,4/3/6,20,[],Grizaka,Emperor-of-Gnollkind,gol_region,south_salahad_superregion,Female
+0,U10,Brrtekuh,0/0/0,32,[],Brrtekuh,Splitter-of-Sands,west_salahad_region,north_salahad_superregion,Female
+9,U11,Landshark Clan,3/3/3,24,['bold_fighter_personality'],Jenthib,Landshark,ourdia_region,escann_superregion,Male
+8,U12,Oubbligschild Clan,2/2/4,19,['babbling_buffoon_personality'],Nerlisk,pobnek-Oubblig,ourdia_region,escann_superregion,Male
+10,U13,Greysheep Clan,4/4/2,26,['lawgiver_personality'],Guklo,Greysheep,harpy_hills_region,bulwar_superregion,Female
+12,U14,Mountainhugger Clan,4/4/4,28,['strict_personality'],Dheep,Mountainhugger,bahar_region,bulwar_superregion,Male
+12,U15,Marble Head Clan,3/3/6,21,['conqueror_personality'],Idrarseff,pobnek-Vakkra,bahar_region,bulwar_superregion,Male
+6,U16,Ourdia,2/3/1,43,['drunkard_personality#Helostlike3/4thsofhiskingdom'],Denar,sílOurd,ourdia_region,escann_superregion,Male
+14,U17,Crathanor,6/5/3,49,"['righteous_personality', 'silver_tongue_personality']",Olor,sílReiancestir,bahar_region,bulwar_superregion,Male
+10,U18,Reuyel,2/3/5,37,[],MarodeenofZorntanas,N/A,bahar_region,bulwar_superregion,Male
+6,U19,Baharkand,3/2/1,78,[],IrranIII,szel-Baharkand,bahar_region,bulwar_superregion,Male
+9,U20,Azka-Sur,3/4/2,43,['naive_personality'],Mardint,szel-Sur,far_bulwar_region,bulwar_superregion,Male
+13,U23,Selocshana,6/5/2,53,"['fierce_negotiator_personality', 'entrepreneur_personality', 'embezzler_personality']",YurionIV,yenNizel,sarda_region,ynn_superregion,Male
+10,U24,Arvezl,3/5/2,19,['silver_tongue_personality'],FilimirII,Ralsork,sarda_region,ynn_superregion,Male
+9,U25,Adbraseloc,3/3/3,35,"['calm_personality', 'secretive_personality']",PelomirII,yenKovesdir,sarda_region,ynn_superregion,Male
+17,U26,Lisicalrevo,5/6/6,51,"['well_connected_personality', 'intricate_web_weaver_personality', 'obsessive_perfectionist_personality']",TarkirnIII,yenLisia,rzenta_region,ynn_superregion,Male
+11,Y01,Azjakuma,5/3/3,72,"['careful_personality', 'calm_personality']",Tiraga,Aromo,demon_hills_region,yanshen_superregion,Male
+12,Y02,Jinqiu,6/2/4,235,"['charismatic_negotiator_personality', 'midas_touched_personality', 'immortal_personality']",Zhishi,oftheZhuyingCourt,upper_yanshen_region,yanshen_superregion,Male
+9,Y03,Hubao,3/4/2,37,['silver_tongue_personality'],Baka,oftheWitheringWind,demon_hills_region,yanshen_superregion,Male
+10,Y04,Anjiang,3/5/2,23,[],Zhang,Zudao,upper_yanshen_region,yanshen_superregion,Male
+12,Y05,Lanjinhui,5/3/4,42,"['tactical_genius_personality', 'righteous_personality']",Ziyou,Lingxiu,north_yanshen_region,yanshen_superregion,Male
+13,Y06,Yangcheng,4/5/4,32,[],Cijiong,Qiu,upper_yanshen_region,yanshen_superregion,Male
+9,Y07,Guhe,3/2/4,28,[],Haohzhou,Xie,upper_yanshen_region,yanshen_superregion,Male
+10,Y08,Yanzhong,3/5/2,23,[],Shouzong,Ouyang,upper_yanshen_region,yanshen_superregion,Male
+13,Y09,Bianfang,4/3/6,41,"['conqueror_personality', 'lawgiver_personality']",Xinzhu,Long,upper_yanshen_region,yanshen_superregion,Male
+4,Y10,Yingzhen,1/2/1,25,[],Lin,Gaobo,upper_yanshen_region,yanshen_superregion,Male
+8,Y12,Fengzhaobu,2/1/5,35,['martial_educator_personality'],Sun,ofthePathoftheCrouchingTiger,xianjie_region,south_haless_superregion,Male
+9,Y13,Jiangdu,2/1/6,22,['strict_personality'],Qing,Jun,lower_yanshen_region,yanshen_superregion,Male
+9,Y14,Zhiqian,3/2/4,46,['bold_fighter_personality'],Kai,Pan,north_yanshen_region,yanshen_superregion,Male
+11,Y15,Beikdugang,5/3/3,27,['scholar_personality'],Wangji,Qilin,north_yanshen_region,yanshen_superregion,Male
+11,Y16,Jiantsiang,3/2/6,37,['martial_educator_personality'],Katouka,oftheUndyingFlame,north_yanshen_region,yanshen_superregion,Male
+8,Y17,Gushuokguan,4/2/2,35,['fierce_negotiator_personality'],Yijun,Wei,north_yanshen_region,yanshen_superregion,Male
+10,Y18,Sziangnu,4/4/2,66,"['scholar_personality', 'architectural_visionary_personality']",Liang,Xianhe,lower_yanshen_region,yanshen_superregion,Male
+10,Y19,Tianlou,6/3/1,62,['pious_personality'],Sheng,Ren,lower_yanshen_region,yanshen_superregion,Male
+9,Y20,Feiten,3/4/2,42,['entrepreneur_personality'],Zongmin,Kai,lower_yanshen_region,yanshen_superregion,Male
+12,Y21,Xiyun,4/4/4,28,"['well_connected_personality', 'strict_personality']",Feng,Xi,lower_yanshen_region,yanshen_superregion,Male
+11,Y23,Zyujyut,2/4/5,20,"['bold_fighter_personality', 'inspiring_leader_personality']",JuenTai,Jyuk,lower_yanshen_region,yanshen_superregion,Male
+10,Y24,Luoyip,3/5/2,34,"['intricate_web_weaver_personality', 'careful_personality']",Ciyu,Su,lower_yanshen_region,yanshen_superregion,Male
+12,Y25,Zongji,4/3/5,55,[],Juonxi,oftheDivineCall,lower_yanshen_region,yanshen_superregion,Male
+9,Y26,Yinquan,3/6/0,23,"['charismatic_negotiator_personality', 'mage_personality']",Holi,Leng,lower_yanshen_region,yanshen_superregion,Female
+7,Y27,Kohai,2/3/2,24,['architectural_visionary_personality'],Ding,Gao,lower_yanshen_region,yanshen_superregion,Male
+8,Y28,Jiangliusi,2/4/2,48,['calm_personality'],Gao,oftheSchoolofFlowingWater,xianjie_region,south_haless_superregion,Male
+10,Y29,Jilin,3/6/1,30,"['intricate_web_weaver_personality', 'well_connected_personality']",Zhulatix,oftheWayofthePiercingSpear,xianjie_region,south_haless_superregion,Male
+9,Y30,Aoshan,3/5/1,56,['pious_personality'],Quon,oftheSchoolofOpenSky,xianjie_region,south_haless_superregion,Male
+10,Y33,Vidvakhoka,6/2/2,30,['calm_personality'],Avasara,oftheSchoolofDeepFog,dhujat_region,rahen_superregion,Male
+9,Y38,Bommak,5/2/2,34,[],Wang,oftheSchooloftheHighTower,xianjie_region,south_haless_superregion,Male
+11,Y39,Fengwuzhe,3/4/4,24,"['silver_tongue_personality', 'bold_fighter_personality']",Xiwangmu,oftheWayoftheDancingBreeze,xianjie_region,south_haless_superregion,Female
+9,Y44,Shanyutian,2/4/3,46,['strict_personality'],Jin,oftheWayoftheSlipperyEel,xianjie_region,south_haless_superregion,Male
+11,Y46,Jianxusi,3/3/5,35,['strict_personality'],Yong,oftheOrderofKeepers,xianjie_region,south_haless_superregion,Male
+12,Y51,Bim Lau,5/3/4,43,[],Sahtiyar,oftheGleamingTomb,bomdan_region,south_haless_superregion,Male
+9,Y52,Semphrerong,2/5/2,49,[],PonheaTo,Ou,dhujat_region,rahen_superregion,Male
+8,Y53,Prukakhin,2/2/4,46,"['expansionist_personality', 'drunkard_personality', 'greedy_personality']",Sukonthor,Pasak,rahen_coast_region,rahen_superregion,Male
+9,Y54,Risbek,3/3/3,25,['tactical_genius_personality'],Padumaraja,Inbek,rahen_coast_region,rahen_superregion,Male
+9,Y55,Khabtei Teleni,5/2/2,44,"['tolerant_personality', 'free_thinker_personality']",Indravar,N/A,bomdan_region,south_haless_superregion,Male
+7,Y56,Pheuon Duan,2/2/3,24,['kind_hearted_personality'],Thihathu,PheuonDuan,thidinkai_region,south_haless_superregion,Male
+10,Y57,Phaethmen Di,4/3/3,36,['industrious_personality'],KeoHua,Khoun,bomdan_region,south_haless_superregion,Male
+8,Y58,Lot Dekkhang,3/4/1,33,['lawgiver_personality'],Metnikhren,ofAktamakhang,bomdan_region,south_haless_superregion,Male
+13,Y59,Thirabnir,5/4/4,79,"['scholar_personality', 'tactical_genius_personality', 'fierce_negotiator_personality']",Narai,Chaiya,thidinkai_region,south_haless_superregion,Male
+7,Y60,Lo Ngoen,2/1/4,20,['conqueror_personality'],Rama,Buakae,thidinkai_region,south_haless_superregion,Male
+9,Y61,Rongbek,3/4/2,24,['midas_touched_personality'],Chan,Ongek,bomdan_region,south_haless_superregion,Male
+12,Y62,Khao Elnak,3/6/3,22,['charismatic_negotiator_personality'],Mya,Saetae,thidinkai_region,south_haless_superregion,Female
+13,Y63,Verkal Ozovar,5/4/4,143,"['immortal_personality', 'benevolent_personality', 'lawgiver_personality']",Kalgir,Krakovar,thidinkai_region,south_haless_superregion,Male
+13,Y64,Pinghoi,4/5/4,42,"['navigator_personality', 'fierce_negotiator_personality', 'intricate_web_weaver_personality']",Ping,Shuang,lupulan_rainforest_region,south_haless_superregion,Female
+12,Y65,Arawkelin,4/5/3,31,['industrious_personality'],Jay,szílArawkelin,lupulan_rainforest_region,south_haless_superregion,Male
+14,Y66,Hon Sai,6/3/5,81,"['immortal_personality', 'righteous_personality', 'conqueror_personality']",Sang,Caoban,thidinkai_region,south_haless_superregion,Male
+11,Y67,Ma Hoang,3/5/3,24,"['tolerant_personality', 'silver_tongue_personality']",Dinh,Caoban,thidinkai_region,south_haless_superregion,Male
+9,Y68,Nagon,4/2/3,44,"['careful_personality', 'just_personality', 'strict_personality', 'zealot_personality']",KhaCham,Lekhot,thidinkai_region,south_haless_superregion,Male
+10,Y71,Kudet Kai,5/2/3,51,"['calm_personality', 'lawgiver_personality']",Pulatan,oftheGreatFang,thidinkai_region,south_haless_superregion,Male
+12,Y72,Chien Binhrung,4/3/5,17,['strict_personality'],Nhitrac,Trung,thidinkai_region,south_haless_superregion,Female
+11,Y73,Sirtan,3/3/5,44,"['tactical_genius_personality', 'strict_personality']",BulitEsak,Pasiri,thidinkai_region,south_haless_superregion,Male
+10,Y74,Pelimkana,2/5/3,26,['intricate_web_weaver_personality'],LangbaWani,Pelimkana,lupulan_rainforest_region,south_haless_superregion,Female
+12,Y75,Tlagapatung,4/5/3,32,"['mage_personality', 'calm_personality', 'zealot_personality']",CaksakSajan,Tlagapatung,lupulan_rainforest_region,south_haless_superregion,Male
+11,Y76,Hebat Hari,3/3/5,35,['zealot_personality'],Hijenpu,JayaRaya,lupulan_rainforest_region,south_haless_superregion,Male
+15,Y77,Kaplakawan,5/4/6,27,['bold_fighter_personality'],KerajKuya,Kapaklawan,lupulan_rainforest_region,south_haless_superregion,Male
+10,Y78,Bukit Bantay,2/2/6,62,"['lawgiver_personality', 'infertile_personality', 'incorruptible_personality']",BawaIli,BukitBantay,lupulan_rainforest_region,south_haless_superregion,Male
+4,Y79,Lelak,1/1/2,16,['babbling_buffoon_personality'],LawaKala,Lelak,lupulan_rainforest_region,south_haless_superregion,Male
+8,Y80,Menek Poko,2/3/3,25,['obsessive_perfectionist_personality'],HutasLinga,MenekPoko,lupulan_rainforest_region,south_haless_superregion,Male
+9,Y81,Kuplukamba,4/3/2,19,['industrious_personality'],Kuwaru,Kuplukamba,lupulan_rainforest_region,south_haless_superregion,Male
+9,Y82,Labanyak,3/2/4,16,['martial_educator_personality'],GehetSawul,Labanyak,lupulan_rainforest_region,south_haless_superregion,Male
+14,Y83,Kuta,4/6/4,20,['entrepreneur_personality'],RewiSumet,Mesantay,lupulan_rainforest_region,south_haless_superregion,Male
+8,Y85,Balrijin,2/3/3,54,[],Pax,ofTheKindledScale,upper_yanshen_region,yanshen_superregion,Male
+9,Y86,Azkare,3/3/3,75,"['immortal_personality', 'just_personality']",Hiderion#toyotomihideyoshiinitialinspiration,Tonanzuir,thidinkai_region,south_haless_superregion,Male
+9,Y87,Tidtam,3/3/3,44,['fertile_personality'],NgaNu,Tidtam,thidinkai_region,south_haless_superregion,Male
+9,Y88,Hinphat,3/4/2,20,['scholar_personality'],Narapati,Hinphat,thidinkai_region,south_haless_superregion,Male
+9,Y89,Yuanszi,3/0/6,33,['zealot_personality'],Zhong,Lao,demon_hills_region,yanshen_superregion,Male
+9,Y90,Tuiista Jaal,3/2/4,38,[],Khald,Hookhoi,shuvuushudi_region,north_haless_superregion,Male
+15,Y91,Nuugdan Tsarai,4/5/6,31,"['tactical_genius_personality', 'conqueror_personality']",Nurgai,Bagaatun,shuvuushudi_region,north_haless_superregion,Female
+12,Y92,Rung Oedek,4/3/5,44,[],Dakash,Ulqujangho,shuvuushudi_region,north_haless_superregion,Male
+16,Y93,Daengun,6/5/5,79,"['zealot_personality', 'righteous_personality', 'scholar_personality']",Jeong-Hun,Gyo,odheongu_region,north_haless_superregion,Male
+12,Z02,Magdalaire,4/4/4,25,"['kind_hearted_personality', 'craven_personality']",Castína,ofAelthíl,the_borders_region,western_cannor_superregion,Female
+8,Z03,Bellacaire,2/6/0,44,"['entrepreneur_personality', 'architectural_visionary_personality']",Aldresia,sílnaDeirStíal,east_dameshead_region,western_cannor_superregion,Female
+10,Z04,Indlebury,5/2/3,64,"['strict_personality', 'lawgiver_personality']",Dominic,ofIndlebury,the_borders_region,western_cannor_superregion,Male
+2,Z06,Brinkmarches,0/1/1,65,[],WalterV,Brinkwick,the_borders_region,western_cannor_superregion,Male
+10,Z08,Bjarnrik,2/4/4,39,"['bold_fighter_personality', 'lawgiver_personality', 'malevolent_personality']",SvenII,Bjarnsson,dalr_region,gerudia_superregion,Male
+8,Z09,Skaldskola,3/2/3,60,[],LeifofNautakr,N/A,gerudian_coast_region,gerudia_superregion,Male
+8,Z10,Revrhavn,2/2/4,42,[],JansentheTall,N/A,dalr_region,gerudia_superregion,Male
+8,Z11,Sidaett,4/2/2,55,"['industrious_personality', 'obsessive_perfectionist_personality', 'kind_hearted_personality']",IverIII,Sidaett,dalr_region,gerudia_superregion,Male
+11,Z12,Naugsvol,2/5/4,19,[],SigridofOlavslund,ofOlavslund,gerudian_coast_region,gerudia_superregion,Female
+7,Z13,Redgarhavn,4/2/1,43,[],SteinarofRedgarhavn,N/A,gerudian_coast_region,gerudia_superregion,Male
+8,Z14,Avnkaup,4/1/3,33,['inspiring_leader_personality'],Gunter,Fjordsson,gerudian_coast_region,gerudia_superregion,Male
+8,Z15,Urviksten,2/0/6,52,"['strict_personality', 'cruel_personality']",KarlII,Ebonfrost,gerudian_coast_region,gerudia_superregion,Male
+10,Z17,Obrtrol,3/1/6,37,['tactical_genius_personality'],Svala'theCrusher',Hardrock,dalr_region,gerudia_superregion,Female
+17,Z18,Frozenmaw,6/5/6,45,"['strict_personality', 'conqueror_personality', 'expansionist_personality']",Brasûr,Frozenmaw,alenic_reach_region,gerudia_superregion,Male
+8,Z19,Broken Jaw,5/2/1,17,[],Jayuk,BrokenJaw,gerudian_coast_region,gerudia_superregion,Male
+8,Z20,Hideguzzler,3/1/4,40,"['cruel_personality', 'midas_touched_personality']",Dobro,Hideguzzler,alenic_reach_region,gerudia_superregion,Male
+7,Z21,Serpentgard,1/2/4,14,[],UlrikII,Serpentsgard,alenic_reach_region,gerudia_superregion,Male
+6,Z22,Celmaldor,2/4/0,342,"['immortal_personality', 'tolerant_personality', 'craven_personality']",TaelarIcewind,N/A,alenic_reach_region,gerudia_superregion,Male
+5,Z23,Esald,0/0/5,42,[],PatrikII,ofEsald,alenic_reach_region,gerudia_superregion,Male
+6,Z24,Envermarck,2/2/2,N/A,[],CityCouncil,N/A,alenic_reach_region,gerudia_superregion,Male
+6,Z25,Dinesck,2/2/2,N/A,[],CityCouncil,N/A,alenic_reach_region,gerudia_superregion,Male
+13,Z26,Adshaw,4/6/3,43,"['charismatic_negotiator_personality', 'intricate_web_weaver_personality']",RycanIV,Adshaw,alenic_reach_region,gerudia_superregion,Male
+6,Z27,Cedevik,2/2/2,N/A,[],CityCouncil,N/A,alenic_reach_region,gerudia_superregion,Male
+6,Z28,Bayvic,2/2/2,N/A,[],CityCouncil,N/A,alenic_reach_region,gerudia_superregion,Male
+6,Z29,Coldmarket,2/2/2,N/A,[],CityCouncil,N/A,alenic_reach_region,gerudia_superregion,Male
+6,Z30,Everwharf,2/2/2,N/A,[],CityCouncil,N/A,alenic_reach_region,gerudia_superregion,Male
+6,Z31,Reachspier,2/2/2,N/A,[],CityCouncil,N/A,alenic_reach_region,gerudia_superregion,Male
+5,Z32,Alencay,0/3/2,17,['well_advised_personality'],LanI,Alencay,alenic_reach_region,gerudia_superregion,Male
+3,Z33,Frostwall,0/0/3,17,"['loose_lips_personality', 'infertile_personality']",CoregII,Frostwall,alenic_reach_region,gerudia_superregion,Male
+8,Z48,Rivsby,3/1/4,39,[],AlenIII,Alcarsson,alenic_reach_region,gerudia_superregion,Male
+5,Z49,Eskerborg,0/2/3,39,[],CarlanII,Alcarsson,alenic_reach_region,gerudia_superregion,Male
+11,Z55,Darkscale,4/3/4,21,['reformist_personality'],Zorën,Darkscale,west_dwarovar_region,west_serpentspine_superregion,Male
+8,Z68,Toarnaire,2/2/4,44,[],LuciantheFat,N/A,lencenor_region,western_cannor_superregion,Male
