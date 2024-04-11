@@ -33,9 +33,7 @@ def create_province_map(main_path):
 def get_neighbors(province_map):    
     for province in Province.instances:
         if province.type != 'wasteland':
-            province.get_neighbors(province_map)            
-
-        save_info_as_csv('output_vanilla')
+            province.get_neighbors(province_map)   
     
 #%% Map output.
 # Outputting a map. Takes a map of all provinces and inputs the proper colors

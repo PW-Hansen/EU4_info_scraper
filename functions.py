@@ -172,8 +172,18 @@ def read_PDX_file_subfunction(lines):
 def read_PDX_file(path, filename, encoding = 'UTF-8'):
     os.chdir(path)
     
-    with open(filename, 'r', encoding = encoding) as f:
-        lines = f.readlines()
+    if encoding == 'UTF-8':
+        alt_encoding = 'ANSI'
+    else:
+        alt_encoding = 'UTF-8'
+    
+    try:
+        with open(filename, 'r', encoding = encoding) as f:
+            lines = f.readlines()
+    except:
+        print(f'Default encoding wrong for {filename}, trying {alt_encoding}.')
+        with open(filename, 'r', encoding = alt_encoding) as f:
+            lines = f.readlines()
         
     new_lines = []
     

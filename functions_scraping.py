@@ -12,14 +12,12 @@ DEFINES['MODE'] = 'anbennar'
 # DEFINES['MODE'] = 'vanilla'
 
 if DEFINES['MODE'] == 'anbennar':
-    DEFINES['MAIN_PATH'] = r'C:\Users\idria\Documents\Paradox Interactive\Europa Universalis IV\mod\Anbennar-PublicFork'
     DEFINES['PROVINCE_FLAG_FILE'] = 'anbennar_flags.eu4'
     DEFINES['CULTURE_FILE'] = "anb_cultures.txt" 
     DEFINES['RELIGION_FILE'] = '00_anb_religion.txt'
     DEFINES['COUNTRY_TAG_FILE'] = 'anb_countries.txt'
 
 if DEFINES['MODE'] == 'vanilla':
-    DEFINES['MAIN_PATH'] = r'D:\Steam\steamapps\common\Europa Universalis IV'
     DEFINES['PROVINCE_FLAG_FILE'] = 'vanilla_flags.eu4'
     DEFINES['CULTURE_FILE'] = '00_cultures.txt'
     DEFINES['RELIGION_FILE'] = '00_religion.txt'
@@ -27,8 +25,8 @@ if DEFINES['MODE'] == 'vanilla':
 
 
 #%% Load countries.
-def load_countries():
-    history_path    = os.path.join(DEFINES['MAIN_PATH'], 'history')
+def load_countries(path):
+    history_path    = os.path.join(path, 'history')
     countries_path  = os.path.join(history_path, 'countries')
     
     os.chdir(countries_path)
@@ -47,7 +45,7 @@ def load_countries():
             country = Country(tag,name)    
             
     # Grabbing country names.
-    common_path = os.path.join(DEFINES['MAIN_PATH'], 'common')
+    common_path = os.path.join(path, 'common')
     os.chdir(common_path)
     
     common_path_country_tags = os.path.join(common_path, 'country_tags')
@@ -238,8 +236,8 @@ def load_countries():
                     
 
 #%% Cultures.
-def load_cultures():
-    common_path     = os.path.join(DEFINES['MAIN_PATH'], 'common')
+def load_cultures(path):
+    common_path     = os.path.join(path, 'common')
     cultures_path   = os.path.join(common_path, 'cultures')
     
     culture_info = read_PDX_file(cultures_path, DEFINES['CULTURE_FILE'], encoding = 'ANSI')
@@ -254,8 +252,8 @@ def load_cultures():
                 Culture(sub_element, CultureGroup.class_dict[culture_group])
 
 #%% Religions
-def load_religions():
-    common_path     = os.path.join(DEFINES['MAIN_PATH'], 'common')
+def load_religions(path):
+    common_path     = os.path.join(path, 'common')
     religions_path  = os.path.join(common_path, 'religions')
     
     religion_info = read_PDX_file(religions_path, DEFINES['RELIGION_FILE'])
@@ -272,9 +270,9 @@ def load_religions():
         Religion('animism', Pagan)
             
 #%% Getting areas, regions, continents, etc.
-def prep_areas_etc():
+def prep_areas_etc(path):
     # Go to maps folder.
-    map_path = os.path.join(DEFINES['MAIN_PATH'], 'map')
+    map_path = os.path.join(path, 'map')
     
     os.chdir(map_path)
     
@@ -282,7 +280,7 @@ def prep_areas_etc():
     sea_provinces   = []
     land_provinces  = []
     
-    with open("area.txt", 'r', encoding = 'utf-8') as f:
+    with open("area.txt", 'r', encoding = 'ANSI') as f:
         lines = f.readlines()
         province_list = sea_provinces
         for i, line in enumerate(lines):
@@ -309,12 +307,12 @@ def prep_areas_etc():
 
 
 #%% Provinces
-def load_provinces():
-    land_provinces, sea_provinces = prep_areas_etc() 
+def load_provinces(path):
+    land_provinces, sea_provinces = prep_areas_etc(path) 
     
-    history_path    = os.path.join(DEFINES['MAIN_PATH'], 'history')
+    history_path    = os.path.join(path, 'history')
     provinces_path  = os.path.join(history_path, 'provinces')
-    map_path = os.path.join(DEFINES['MAIN_PATH'], 'map')
+    map_path = os.path.join(path, 'map')
     
     os.chdir(map_path)
     
@@ -425,8 +423,8 @@ def load_provinces():
         province.owner_original = province.owner
                 
 #%% Areas, regions, and superregions.
-def assign_areas_etc():
-    map_path = os.path.join(DEFINES['MAIN_PATH'], 'map')
+def assign_areas_etc(path):
+    map_path = os.path.join(path, 'map')
     
     area_info = read_PDX_file(map_path, 'area.txt')
     
@@ -489,9 +487,9 @@ def assign_areas_etc():
 
 
 #%% Trade node
-def assign_trade_nodes():
+def assign_trade_nodes(path):
     # Getting correct directionary.
-    common_path = os.path.join(DEFINES['MAIN_PATH'], 'common')
+    common_path = os.path.join(path, 'common')
     os.chdir(common_path)
     
     common_path_tradenodes = os.path.join(common_path, 'tradenodes')
@@ -543,8 +541,8 @@ def assign_trade_nodes():
         node.outgoing = outgoing_nodes
             
 #%% Setting up terrain and assigning it to provinces.
-def load_and_assign_terrain():
-    terrain_file_dict = read_PDX_file(os.path.join(DEFINES['MAIN_PATH'], 'map'), 'terrain.txt')
+def load_and_assign_terrain(path):
+    terrain_file_dict = read_PDX_file(os.path.join(path, 'map'), 'terrain.txt')
 
     terrain_types = terrain_file_dict['categories']
     k, v = [], []
@@ -603,8 +601,8 @@ def load_and_assign_terrain():
         Terrain(name, provinces, dev_cost)
 
 #%% Climate
-def load_and_assign_climate():
-    climate_file_dict = read_PDX_file(os.path.join(DEFINES['MAIN_PATH'], 'map'), 'climate.txt')
+def load_and_assign_climate(path):
+    climate_file_dict = read_PDX_file(os.path.join(path, 'map'), 'climate.txt')
 
     k, v = [], []
         

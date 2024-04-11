@@ -1,0 +1,80 @@
+every_province = {
+    if = { limit = { has_terrain = glacier }
+        set_province_flag = terrain_is_glacier
+    }
+    if = { limit = { has_terrain = farmlands }
+        set_province_flag = terrain_is_farmlands
+    }
+    if = { limit = { has_terrain = bloodgroves }
+        set_province_flag = terrain_is_bloodgroves
+    }
+    if = { limit = { has_terrain = gladeway }
+        set_province_flag = terrain_is_gladeway
+    }
+    if = { limit = { has_terrain = ancient_forest }
+        set_province_flag = terrain_is_ancient_forest
+    }
+    if = { limit = { has_terrain = hills }
+        set_province_flag = terrain_is_hills
+    }
+    if = { limit = { has_terrain = woods }
+        set_province_flag = terrain_is_woods
+    }
+    if = { limit = { has_terrain = mountain }
+        set_province_flag = terrain_is_mountain
+    }
+    if = { limit = { has_terrain = impassable_mountains }
+        set_province_flag = terrain_is_impassable_mountains
+    }
+    if = { limit = { has_terrain = grasslands }
+        set_province_flag = terrain_is_grasslands
+    }
+    if = { limit = { has_terrain = jungle }
+        set_province_flag = terrain_is_jungle
+    }
+    if = { limit = { has_terrain = marsh }
+        set_province_flag = terrain_is_marsh
+    }
+    if = { limit = { has_terrain = desert }
+        set_province_flag = terrain_is_desert
+    }
+    if = { limit = { has_terrain = coastal_desert }
+        set_province_flag = terrain_is_coastal_desert
+    }
+    if = { limit = { has_terrain = coastline }
+        set_province_flag = terrain_is_coastline
+    }
+    if = { limit = { has_terrain = drylands }
+        set_province_flag = terrain_is_drylands
+    }
+    if = { limit = { has_terrain = highlands }
+        set_province_flag = terrain_is_highlands
+    }
+    if = { limit = { has_terrain = savannah }
+        set_province_flag = terrain_is_savannah
+    }
+    if = { limit = { has_terrain = steppe }
+        set_province_flag = terrain_is_steppe
+    }
+    if = { limit = { has_terrain = dwarven_hold }
+        set_province_flag = terrain_is_dwarven_hold
+    }
+    if = { limit = { has_terrain = dwarven_hold_surface }
+        set_province_flag = terrain_is_dwarven_hold_surface
+    }
+    if = { limit = { has_terrain = dwarven_road }
+        set_province_flag = terrain_is_dwarven_road
+    }
+    if = { limit = { has_terrain = cavern }
+        set_province_flag = terrain_is_cavern
+    }
+    if = { limit = { has_terrain = mushroom_forest_terrain }
+        set_province_flag = terrain_is_mushroom_forest_terrain
+    }
+    if = { limit = { has_terrain = city_terrain }
+        set_province_flag = terrain_is_city_terrain
+    }
+    if = { limit = { has_terrain = shadow_swamp_terrain }
+        set_province_flag = terrain_is_shadow_swamp_terrain
+    }
+}

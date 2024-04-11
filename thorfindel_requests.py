@@ -278,3 +278,12 @@ def run_Thorfindel_request():
         
     return years, changes, yearly_changes, active_regions
     
+#%% Finding cavern provinces. Was executed through console and archived here.
+#os.chdir(DEFINES['ORIGIN_PATH'])
+#
+#with open('caverns.txt', 'w') as f:
+#    for prov in cavern_provs:
+#        prov_name = prov.prov_name
+#        prov_name = prov_name.split('_#')[0]
+#        prov_name = prov_name.replace('_',' ')
+#        f.write("{}, {}, {}, {}\n".format(prov.prov_num, prov_name, prov.area.name, prov.region.name))

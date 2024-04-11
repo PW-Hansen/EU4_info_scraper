@@ -14,29 +14,43 @@ import os
 
 #%% Defines.
 DEFINES = {}
-DEFINES['MAP_PROVINCES'] = False
-DEFINES['OUTPUT'] = True
+DEFINES['MAP_PROVINCES'] = True # Leave at false, there's some issue with pixel colors. 
+DEFINES['OUTPUT'] = False # Should always be false if the above is false.
 DEFINES['ORIGIN_PATH'] = os.getcwd()
-DEFINES['MAIN_PATH'] = r'C:\Users\idria\Documents\Paradox Interactive\Europa Universalis IV\mod\Anbennar-PublicFork'
+DEFINES['MAIN_PATH'] = r'C:\Users\idria\Documents\Paradox Interactive\Europa Universalis IV\mod\src'
 
 
 #%% Actually running stuff.
 if __name__ == "__main__":
-    scrape.load_cultures()
-    scrape.load_religions()
-    scrape.load_countries()
-    scrape.load_provinces()
-    scrape.assign_areas_etc()
-    scrape.assign_trade_nodes()
-    scrape.load_and_assign_terrain()
-    scrape.load_and_assign_climate()
+    path = DEFINES['MAIN_PATH']
+    
+    scrape.load_cultures(path)
+    print("Cultures loaded.")
+    scrape.load_religions(path)
+    print("Religions loaded.")
+    scrape.load_countries(path)
+    print("Countries loaded.")
+    scrape.load_provinces(path)
+    print("Provinces loaded.")
+    scrape.assign_areas_etc(path)
+    print("Areas etc. set.")
+    scrape.assign_trade_nodes(path)
+    print("Trade nodes assigned.")
+    scrape.load_and_assign_terrain(path)
+    print("Terrain assidned.")
+    scrape.load_and_assign_climate(path)
+    print("Climate assigned.")
     scrape.misc_cleanup()
+    print("Cleanup.")
     
     if DEFINES['MAP_PROVINCES']:
+        print("Creating the province map.")
         province_map, image = create_province_map(DEFINES['MAIN_PATH'])
-        get_neighbors(province_map)
-        country_map(image, province_map, DEFINES['ORIGIN_PATH'])
+        # Warning: the lines below adds a minute or so of runtime.
+        print("Determining neighbors.")
+        get_neighbors(province_map) # Determines land and sea neighbors for all provinces.
+        country_map(image, province_map, DEFINES['ORIGIN_PATH']) # Creates a country-view map for testing purposes, called testing.png
     
-    if DEFINES['OUTPUT'] == True:
+    if DEFINES['MAP_PROVINCES'] and DEFINES['OUTPUT']:
         save_info_as_csv('output')
         

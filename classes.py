@@ -78,7 +78,7 @@ class Province():
     
     def calc_development(self):
         try:
-            self.development = self.base_manpower + self.base_production + self.base_manpower
+            self.development = self.base_tax + self.base_production + self.base_manpower
         except:
             print(f'{self} has no development values. Assigning N/A to dev values.')
             self.development        = 'N/A'
